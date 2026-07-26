@@ -1,31 +1,53 @@
 /**
- * RPWP Healthcare Clean Landing Page Controller
+ * RPWP Healthcare Classic Controller
  * Version: 1.0.0
  */
 
 document.addEventListener("DOMContentLoaded", () => {
-  const grid = document.getElementById("product-grid");
-  if (!grid || !window.RPWP_DATA) return;
+  if (!window.RPWP_DATA) return;
 
-  grid.innerHTML = RPWP_DATA.products.map(p => `
-    <div class="product-card">
-      <div class="product-badge-wrap">
-        <span class="product-badge">${p.badge}</span>
-      </div>
-      <div class="product-card-body">
-        <span class="product-category-label">${p.categoryLabel}</span>
-        <h3 class="product-title">${p.name}</h3>
-        <p class="product-short-desc">${p.shortDesc}</p>
-        <div class="product-specs-chips mt-2">
-          ${p.specs.slice(0, 2).map(s => `<span class="spec-chip">✓ ${s}</span>`).join('')}
+  // Render Product Catalog Grid
+  const prodGrid = document.getElementById("product-grid");
+  if (prodGrid) {
+    prodGrid.innerHTML = RPWP_DATA.products.map(p => `
+      <div class="product-card">
+        <div class="product-img-box">
+          <img src="${p.img}" alt="${p.name}" class="product-img" onerror="this.src='${RPWP_DATA.logos.rpwp}'">
+        </div>
+        <div class="product-body">
+          <span class="product-badge">${p.badge}</span>
+          <h3 class="product-name">${p.name}</h3>
+          <p class="product-desc">${p.shortDesc}</p>
+          <div class="product-footer">
+            <div class="product-price">RM ${p.priceMYR.toLocaleString(undefined, {minimumFractionDigits: 2})}</div>
+            <a href="https://wa.me/60196808697/?text=Salam%20RPWP%20Healthcare.%20I%20am%20interested%20in%20${encodeURIComponent(p.name)}" target="_blank" class="btn btn-sm btn-primary">Inquire Now</a>
+          </div>
         </div>
       </div>
-      <div class="product-card-footer">
-        <div class="product-price">
-          <span class="price-val">RM ${p.priceMYR.toLocaleString(undefined, {minimumFractionDigits: 2})}</span>
-        </div>
-        <a href="https://wa.me/60196808697/?text=Salam%20RPWP%20Healthcare.%20I%20am%20interested%20in%20${encodeURIComponent(p.name)}" target="_blank" class="btn btn-sm btn-primary">Inquire</a>
+    `).join('');
+  }
+
+  // Render Advisory Board Grid
+  const advGrid = document.getElementById("advisory-grid");
+  if (advGrid) {
+    advGrid.innerHTML = RPWP_DATA.advisoryBoard.map(member => `
+      <div class="advisory-card">
+        <img src="${member.img}" alt="${member.name}" class="advisory-img" onerror="this.src='${RPWP_DATA.logos.rpwp}'">
+        <h4 class="advisory-name">${member.name}</h4>
+        <div class="advisory-role">${member.role}</div>
+        <div class="advisory-qual">${member.qualifications}</div>
+        <p class="advisory-bio">${member.bio}</p>
       </div>
-    </div>
-  `).join('');
+    `).join('');
+  }
+
+  // Render Hearing Aid Brands
+  const brandGrid = document.getElementById("brand-grid");
+  if (brandGrid) {
+    brandGrid.innerHTML = RPWP_DATA.brands.map(b => `
+      <a href="${b.link}" target="_blank" class="brand-card">
+        <img src="${b.logo}" alt="${b.name}" class="brand-img" onerror="this.alt='${b.name}'">
+      </a>
+    `).join('');
+  }
 });

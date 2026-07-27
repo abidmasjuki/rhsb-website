@@ -1,6 +1,6 @@
 /* ==========================================================================
    RPWP Healthcare Modern Frameless Design System
-   Expansive media, facial portrait rules, clean typography, clinical tone
+   Side-by-side Advisory Layout, Expansive media, clean typography, clinical tone
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
@@ -334,6 +334,12 @@ img {
 }
 
 /* Seamless Grid Layouts */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -440,70 +446,65 @@ img {
 }
 
 /* ==========================================================================
-   FACIAL PORTRAIT PHOTOGRAPHY RULES (Rule of Thirds & Face Focus)
+   ORIGINAL RPWP ADVISORY PANEL SIDE-BY-SIDE LAYOUT (Exact Match to Screenshot!)
+   Left rectangular portrait photo (object-position: center top / 15%) + Right content text
    ========================================================================== */
-.advisory-card-clean {
-  background: var(--bg-surface);
-  border-radius: 16px;
-  padding: 32px 24px;
-  text-align: center;
-  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
+.advisory-card-classic {
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  min-height: 220px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.advisory-card-clean:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+.advisory-card-classic:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-.advisory-portrait-box {
-  width: 145px;
-  height: 145px;
-  margin: 0 auto 20px auto;
+.advisory-img-box {
+  width: 170px;
+  min-width: 170px;
+  background: #E2E8F0;
   position: relative;
+  overflow: hidden;
 }
 
-.advisory-portrait {
-  width: 145px;
-  height: 145px;
-  border-radius: 50%;
+.advisory-img-classic {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  /* Photography Rule: Focus 100% on human eyes & facial features */
+  /* Photography rule: Focus on facial features & eyes */
   object-position: center 15%;
-  margin: 0 auto;
-  border: 4px solid #FFFFFF;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
 }
 
-.advisory-card-clean:hover .advisory-portrait {
+.advisory-card-classic:hover .advisory-img-classic {
   transform: scale(1.05);
 }
 
-.advisory-name {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--nav-bg);
-  margin-bottom: 4px;
+.advisory-content-classic {
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
 }
 
-.advisory-title {
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--top-bar-bg);
+.advisory-name-classic {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #1A202C;
   margin-bottom: 6px;
+  line-height: 1.25;
 }
 
-.advisory-qual {
-  font-size: 0.82rem;
-  color: var(--text-light);
-  margin-bottom: 14px;
-  line-height: 1.45;
-}
-
-.advisory-bio {
-  font-size: 0.88rem;
-  color: var(--text-medium);
+.advisory-bio-classic {
+  font-size: 0.92rem;
+  color: #4A5568;
   line-height: 1.6;
 }
 
@@ -578,9 +579,15 @@ img {
 }
 
 /* Responsive */
+@media (max-width: 992px) {
+  .grid-2 { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 768px) {
   .hero-title { font-size: 2.2rem; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
+  .advisory-card-classic { flex-direction: column; }
+  .advisory-img-box { width: 100%; height: 220px; }
 }
 
 @media (max-width: 480px) {

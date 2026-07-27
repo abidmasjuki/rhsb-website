@@ -1,6 +1,6 @@
 /* ==========================================================================
-   RPWP Healthcare Modern Design System (Refined & Balanced)
-   Clean typography, combined INNOHEAR & Google Reviews section, natural linkable text
+   RPWP Healthcare Modern Design System (Refined & Subtle Link Integration)
+   Clean typography, optically balanced brand logos, subtle natural links
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
@@ -24,8 +24,6 @@
   --primary-blue-dark: #1E4E8C;
   --accent-green: #16A34A;
   --accent-red: #7A0000;
-  --google-yellow: #FBBC04;
-  --google-blue: #4285F4;
 
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -53,6 +51,18 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* Subtle Natural Link Styles */
+.subtle-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.subtle-link:hover {
+  color: var(--primary-blue);
+  text-decoration: underline;
 }
 
 /* Expansive Media Rules */
@@ -534,20 +544,14 @@ img {
 }
 
 /* ==========================================================================
-   COMBINED UNIFIED INNOHEAR BRANCH & VERIFIED REVIEWS SECTION
+   CLEAN UNIFIED INNOHEAR BRANCH & GOOGLE MAP LOCATION SECTION
    ========================================================================== */
-.innohear-reviews-wrapper {
-  background: var(--bg-subtle);
+.innohear-clean-container {
+  background: #FFFFFF;
   border-radius: 20px;
-  padding: 45px 35px;
+  padding: 45px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
   border: 1px solid #E2E8F0;
-}
-
-.innohear-header-card {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 40px auto;
 }
 
 .innohear-logo-img {
@@ -556,48 +560,12 @@ img {
   object-fit: contain;
 }
 
-/* Natural Linkable Review Cards (No Cheesy Badges / No "Click Here" / No "www.") */
-.natural-review-card {
-  display: block;
-  background: #FFFFFF;
-  border-radius: 14px;
-  padding: 24px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  border-left: 4px solid var(--primary-blue);
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.natural-review-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 28px rgba(37, 99, 235, 0.12);
-}
-
-.natural-card-title {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--nav-bg);
-  margin-bottom: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.natural-card-title:hover {
-  color: var(--primary-blue);
-}
-
-.stars-row {
-  color: var(--google-yellow);
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
-
-.review-body {
-  font-size: 0.92rem;
-  color: var(--text-medium);
-  line-height: 1.6;
+.map-embed-wrapper {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
+  height: 380px;
+  width: 100%;
 }
 
 /* Site Footer */

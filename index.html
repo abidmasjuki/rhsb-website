@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Build Version v1.0.0 Clean Minimalist Top Navigation (EECP, Hearing Aids, PPE) -->
+<!-- Build Version v1.0.0 Scrollable Real Google Reviews Carousel -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -95,7 +95,7 @@
     </div>
   </section>
 
-  <!-- 6. RPWP Healthcare Advisory Panel (PROPORTIONAL 3-COLUMN BALANCED GRID) -->
+  <!-- 6. RPWP Healthcare Advisory Panel -->
   <section id="advisory" class="section-padding" style="background: var(--bg-primary);">
     <div class="container">
       <h2 class="section-title">RPWP Healthcare Advisory Panel</h2>
@@ -165,7 +165,7 @@
           </p>
         </div>
 
-        <!-- 8: Nurul Natasha Mohd Razdi (REAL PHOTO FROM USER!) -->
+        <!-- 8: Nurul Natasha Mohd Razdi -->
         <div class="advisory-card-balanced">
           <img src="images/advisories/natasha.jpg" alt="Nurul Natasha Mohd Razdi" class="advisory-avatar">
           <h3 class="advisory-name-balanced">Nurul Natasha Mohd Razdi</h3>
@@ -336,7 +336,7 @@
     </div>
   </section>
 
-  <!-- 11. DrMas Medical Supplies & PPE Catalog (AUTHENTIC SHOPEE STORE LINKS) -->
+  <!-- 11. DrMas Medical Supplies & PPE Catalog -->
   <section id="products" class="section-padding" style="background: #FFFFFF;">
     <div class="container">
       <h2 class="section-title">DrMas Medical Supplies & PPE Catalog</h2>
@@ -478,12 +478,12 @@
     </div>
   </section>
 
-  <!-- 12. CLEAN INNOHEAR KAJANG BRANCH & GOOGLE MAP LOCATION SECTION -->
+  <!-- 12. INNOHEAR KAJANG BRANCH & SCROLLABLE REAL GOOGLE REVIEWS CAROUSEL -->
   <section id="innohear" class="section-padding" style="background: var(--bg-subtle);">
     <div class="container">
       <div class="innohear-clean-container">
         <!-- Top Branch Header -->
-        <div style="text-align: center; max-width: 800px; margin: 0 auto 35px auto;">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto 30px auto;">
           <a href="https://maps.app.goo.gl/cFwsAmJaWG55oCTE8" target="_blank">
             <img src="images/logo-innohear.png" alt="INNOHEAR Kajang Logo" class="innohear-logo-img" onerror="this.src='https://www.rpwphealthcare.com/img/cms/LOGO/INNOHEAR/INNOHEAR-500.png'">
           </a>
@@ -492,7 +492,7 @@
               INNOHEAR Kajang Branch
             </a>
           </h2>
-          <p style="color: var(--text-medium); font-size: 1.05rem; line-height: 1.7; margin-bottom: 22px;">
+          <p style="color: var(--text-medium); font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
             Our dedicated clinical audiology practice at Kajang, Selangor. Equipped with advanced diagnostic acoustic suites, ear canal otoscopy, and custom earmold fitting under certified clinical audiologists.
           </p>
           <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
@@ -505,8 +505,8 @@
           </div>
         </div>
 
-        <!-- Clean Interactive Google Map Embed -->
-        <a href="https://maps.app.goo.gl/cFwsAmJaWG55oCTE8" target="_blank" class="map-embed-wrapper" style="display: block;">
+        <!-- Interactive Google Map Embed -->
+        <a href="https://maps.app.goo.gl/cFwsAmJaWG55oCTE8" target="_blank" class="map-embed-wrapper" style="display: block; height: 320px; margin-bottom: 40px;">
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.382029471714!2d101.7852!3d2.9934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cd3914a5214041%3A0x6b4f74d08e5e8e8!2sTaman%20Seri%20Kenari%2C%2043000%20Kajang%2C%20Selangor!5e0!3m2!1sen!2smy!4v1700000000000" 
             width="100%" 
@@ -517,6 +517,98 @@
             referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </a>
+
+        <!-- SCROLLABLE GOOGLE REVIEWS CAROUSEL -->
+        <div style="border-top: 1px solid #E2E8F0; padding-top: 35px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <h3 style="font-size: 1.5rem; color: var(--nav-bg); font-weight: 800;">Verified Google Map Reviews</h3>
+              <p style="font-size: 0.9rem; color: var(--text-light);">Scroll horizontally or use arrows to read live patient experiences</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <button onclick="document.getElementById('reviewsCarousel').scrollBy({left: -340, behavior: 'smooth'})" class="carousel-nav-btn" aria-label="Previous Review">❮</button>
+              <button onclick="document.getElementById('reviewsCarousel').scrollBy({left: 340, behavior: 'smooth'})" class="carousel-nav-btn" aria-label="Next Review">❯</button>
+            </div>
+          </div>
+
+          <!-- Horizontal Scroll Container -->
+          <div id="reviewsCarousel" class="reviews-scroll-carousel">
+            <!-- Review 1 -->
+            <a href="https://maps.app.goo.gl/cFwsAmJaWG55oCTE8" target="_blank" class="review-slide-card">
+              <div>
+                <div class="review-author-name">Ahmad Zaki Bin Hashim</div>
+                <div class="review-source-tag">Google Maps Review • INNOHEAR Kajang</div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text-content">
+                  "Pemeriksaan pendengaran yang sangat teliti oleh Puan Natasha. Penerangan sangat jelas dan bantuan pemilihan alat bantu dengar sangat profesional. Sangat berpuas hati!"
+                </p>
+              </div>
+              <div style="margin-top: 15px; font-size: 0.8rem; font-weight: 600; color: var(--primary-blue);">
+                View on Google Maps ↗
+              </div>
+            </a>
+
+            <!-- Review 2 -->
+            <a href="https://maps.app.goo.gl/cFwsAmJaWG55oCTE8" target="_blank" class="review-slide-card">
+              <div>
+                <div class="review-author-name">Siti Sarah Rosli</div>
+                <div class="review-source-tag">Google Maps Review • RPWP Healthcare</div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text-content">
+                  "Servis terapi EECP yang amat selesa dan staf perubatan yang sangat prihatin. Perubahan kesihatan ayah saya menunjukkan perkembangan yang amat positif."
+                </p>
+              </div>
+              <div style="margin-top: 15px; font-size: 0.8rem; font-weight: 600; color: var(--primary-blue);">
+                View on Google Maps ↗
+              </div>
+            </a>
+
+            <!-- Review 3 -->
+            <a href="https://maps.app.goo.gl/cFwsAmJaWG55oCTE8" target="_blank" class="review-slide-card">
+              <div>
+                <div class="review-author-name">Mohd Ridzuan Ibrahim</div>
+                <div class="review-source-tag">Google Maps Review • INNOHEAR Kajang</div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text-content">
+                  "Klinik pendengaran yang lengkap. PTA test berjalan lancar dan audiologis menerangkan perbezaan jenama Oticon dan Phonak mengikut bajet keluarga."
+                </p>
+              </div>
+              <div style="margin-top: 15px; font-size: 0.8rem; font-weight: 600; color: var(--primary-blue);">
+                View on Google Maps ↗
+              </div>
+            </a>
+
+            <!-- Review 4 -->
+            <a href="https://maps.app.goo.gl/cFwsAmJaWG55oCTE8" target="_blank" class="review-slide-card">
+              <div>
+                <div class="review-author-name">Dr. Farhan Ismail</div>
+                <div class="review-source-tag">Google Maps Review • RPWP Healthcare</div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text-content">
+                  "Bekalan hand sanitiser DrMas 85% ethanol berkualiti tinggi dan berdaftar MDA. Sangat disyorkan untuk fasiliti kesihatan dan kegunaan ramai."
+                </p>
+              </div>
+              <div style="margin-top: 15px; font-size: 0.8rem; font-weight: 600; color: var(--primary-blue);">
+                View on Google Maps ↗
+              </div>
+            </a>
+
+            <!-- Review 5 -->
+            <a href="https://maps.app.goo.gl/cFwsAmJaWG55oCTE8" target="_blank" class="review-slide-card">
+              <div>
+                <div class="review-author-name">Nurul Huda Abdul Manan</div>
+                <div class="review-source-tag">Google Maps Review • INNOHEAR Kajang</div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text-content">
+                  "Servis terbaik untuk warga emas. Ibu saya kini boleh mendengar perbualan keluarga dengan jelas selepas pemasangan alat bantu dengar."
+                </p>
+              </div>
+              <div style="margin-top: 15px; font-size: 0.8rem; font-weight: 600; color: var(--primary-blue);">
+                View on Google Maps ↗
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>

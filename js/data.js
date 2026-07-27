@@ -12,7 +12,7 @@ const RPWP_DATA = {
 
   certification: {
     title: "GDPMD Certified",
-    certifiedBy: "Leader Certification Body (LeaderCB — leadercb.com)",
+    certifiedBy: "GDPMD Certification Body",
     certifiedUrl: "https://leadercb.com/",
     description: "Good Distribution Practice for Medical Devices (GDPMD) certified by Leader Certification Body to ensure establishment ability to maintain quality, safety and performance of medical devices.",
     badgeUrl: "https://leadercb.com/wp-content/uploads/2023/05/Logo-LCB.jpeg"

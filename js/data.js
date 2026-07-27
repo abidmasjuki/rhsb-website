@@ -1,7 +1,7 @@
 /**
  * RPWP Healthcare Data Repository
  * Version: 1.0.0
- * Contains all original digital assets, sections, images, and content from www.rpwphealthcare.com
+ * Complete Product & Asset Catalog from www.rpwphealthcare.com
  */
 
 const RPWP_DATA = {
@@ -11,7 +11,7 @@ const RPWP_DATA = {
     innohear: "https://www.rpwphealthcare.com/img/cms/LOGO/INNOHEAR/INNOHEAR-500.png",
     leadercb: "https://leadercb.com/wp-content/uploads/2023/05/Logo-LCB.jpeg",
     mda: "https://www.rpwphealthcare.com/img/cms/RPWPHC/Others/logo-mda-350.png",
-    promoBanner: "https://www.rpwphealthcare.com/modules/ps_banner/img/sale70.png"
+    saleBanner: "https://www.rpwphealthcare.com/modules/ps_banner/img/sale70.png"
   },
   company: {
     name: "RPWP Healthcare Sdn Bhd",
@@ -41,6 +41,10 @@ const RPWP_DATA = {
       impactDesc: "100% of RPWP Healthcare profits are reinvested to sustain a 260 pax sustainable community comprising all types of charity members, staff, students, and co-founders without depending on external alms."
     }
   },
+  storePhotos: [
+    "https://www.rpwphealthcare.com/img/st/1-stores_default.jpg",
+    "https://www.rpwphealthcare.com/img/st/2-stores_default.jpg"
+  ],
   branches: [
     {
       id: "kajang",
@@ -57,7 +61,7 @@ const RPWP_DATA = {
     {
       step: "1",
       title: "1. Visit Our Hearing Center",
-      desc: "Schedule a comfortable consultation at INNOHEAR Kajang with our certified audiologists."
+      desc: "Schedule a consultation at INNOHEAR Kajang with our certified audiologists."
     },
     {
       step: "2",
@@ -96,29 +100,6 @@ const RPWP_DATA = {
       img: "https://www.rpwphealthcare.com/img/cms/RPWPHC/Others/photo/jack-hammer-750x500.jpg"
     }
   ],
-  eecpService: {
-    title: "State-of-the-Art High Premium EECP Therapy Service",
-    subtitle: "Advanced Non-Invasive Cardiovascular Counterpulsation Therapy",
-    desc: "Our medical center provides non-invasive, outpatient Enhanced External Counterpulsation (EECP) therapy using state-of-the-art high premium cardiac equipment. Guided by ECG synchronization, sequential pneumatic pressure cuffs promote natural collateral circulation ('Natural Bypass') without surgery or downtime.",
-    mechanisms: [
-      {
-        title: "Wall Shear Stress (WSS)",
-        desc: "Sequential pressure pulses generate shear stress along blood vessel walls to activate mechanosensors."
-      },
-      {
-        title: "Nitric Oxide (NO) Boost",
-        desc: "Stimulates endothelial Nitric Oxide release to relax vascular smooth muscle and restore vessel elasticity."
-      },
-      {
-        title: "VEGF Angiogenesis",
-        desc: "Promotes Vascular Endothelial Growth Factor for natural collateral blood vessel formation."
-      },
-      {
-        title: "LVEF Augmentation",
-        desc: "Rapid cuff deflation during systole reduces cardiac afterload workload and boosts Left Ventricular Ejection Fraction."
-      }
-    ]
-  },
   advisoryBoard: [
     {
       id: "dr-masjuki",
@@ -203,6 +184,16 @@ const RPWP_DATA = {
       fullDesc: "ECG-synchronized high premium EECP therapy to stimulate Nitric Oxide release, VEGF angiogenesis, Wall Shear Stress, and LVEF augmentation."
     },
     {
+      id: "prod-cerumol",
+      name: "Cerumol Ear Wax Softener Drops",
+      category: "hearing",
+      badge: "Audiology Essential",
+      priceMYR: 28.00,
+      img: "https://www.rpwphealthcare.com/955-home_default/cerumol-ear-wax-softener.jpg",
+      shortDesc: "Gentle dual-action ear wax softening solution recommended prior to audiometry & earmold impressions.",
+      fullDesc: "Loosens and dissolves stubborn ear wax gently to restore clear ear canal access for audiology testing."
+    },
+    {
       id: "prod-resound-quattro",
       name: "ReSound LiNX Quattro Rechargeable Hearing Aid",
       category: "hearing",
@@ -253,14 +244,54 @@ const RPWP_DATA = {
       fullDesc: "Formulated under strict chemical engineering standards (supervised by Dr. Intan Salwani, PhD Cambridge). MDA registered product."
     },
     {
+      id: "prod-ppe-fullset",
+      name: "Full Set COVID-19 PPE Kit (4 In 1)",
+      category: "sanitiser",
+      badge: "Medical Grade",
+      priceMYR: 65.00,
+      img: "https://www.rpwphealthcare.com/884-home_default/full-set-covid-19-personal-protective-equipment-4-in-1.jpg",
+      shortDesc: "Complete protective kit including Isolation Gown, Face Shield, Head Cover, and Boot Covers.",
+      fullDesc: "Produced originally during the emergency COVID-19 outbreak for Ministry of Health healthcare workers."
+    },
+    {
       id: "prod-ppe-gown",
-      name: "RPWP Medical PPE Isolation Gown",
+      name: "Non-woven Breathable Isolation Gown PPE",
       category: "sanitiser",
       badge: "MOH Emergency Grade",
       priceMYR: 35.00,
-      img: "https://www.rpwphealthcare.com/img/cms/RPWPHC/PPE/Isolation-Gown-PPE-Projek-Pelangi-015.jpg",
-      shortDesc: "Fluid-resistant medical isolation gown manufactured in RPWP community facilities for frontliners.",
-      fullDesc: "Produced originally during the emergency COVID-19 outbreak for the Ministry of Health."
+      img: "https://www.rpwphealthcare.com/639-home_default/non-woven-breathable-isolation-gown-ppe-for-non-surgical.jpg",
+      shortDesc: "Fluid-resistant breathable non-woven medical isolation gown for non-surgical procedures.",
+      fullDesc: "Manufactured in RPWP community facilities with elastic cuffs and full rear coverage."
+    },
+    {
+      id: "prod-face-shield",
+      name: "Medical Face Shield (Anti-Fog & Anti-Saliva)",
+      category: "sanitiser",
+      badge: "Medical Grade",
+      priceMYR: 12.00,
+      img: "https://www.rpwphealthcare.com/856-home_default/face-shield-anti-fog-anti-saliva.jpg",
+      shortDesc: "Full-face optical clarity shield with foam headband and anti-fog coating.",
+      fullDesc: "Protects eyes, nose, and mouth from fluid splashes and airborne droplets."
+    },
+    {
+      id: "prod-head-cover",
+      name: "Head Cover Breathable Non-Woven",
+      category: "sanitiser",
+      badge: "Hygiene Protection",
+      priceMYR: 8.00,
+      img: "https://www.rpwphealthcare.com/879-home_default/head-cover-breathable-non-woven-material.jpg",
+      shortDesc: "Disposble breathable non-woven bouffant cap for medical & clinical environments.",
+      fullDesc: "Secures hair cleanly to maintain strict sanitary standards during procedures."
+    },
+    {
+      id: "prod-boot-cover",
+      name: "Boot Cover Non-Woven PPE",
+      category: "sanitiser",
+      badge: "Shoe Protection",
+      priceMYR: 10.00,
+      img: "https://www.rpwphealthcare.com/640-home_default/boot-cover-non-woven-ppe.jpg",
+      shortDesc: "Fluid-resistant knee-high non-woven boot covers with non-slip sole grip.",
+      fullDesc: "Prevents contamination transfer in sterile clinical areas and laboratories."
     }
   ]
 };

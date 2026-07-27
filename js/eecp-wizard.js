@@ -267,7 +267,7 @@ class EECPWizard {
           </div>
 
           <div class="mt-3 pt-3" style="border-top: 1px solid var(--border-color); font-size: 0.85rem;">
-            ⏱️ <strong>Est. Payback Timeline:</strong> ~${paybackMonths} Months | 🌱 <strong>RPWP 260-Pax Community Contribution:</strong> Fully GDPMD Certified Quality Assurance & Maintenance Included.
+            ⏱️ <strong>Est. Payback Timeline:</strong> ~${paybackMonths} Months | 🌱 <strong>RPWP Community Contribution:</strong> Fully GDPMD Certified Quality Assurance & Maintenance Included.
           </div>
         </div>
 

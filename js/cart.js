@@ -253,7 +253,7 @@ class CartManager {
           <p class="order-ref">Order Reference: <strong>${orderNo}</strong></p>
           <p>Thank you for supporting RPWP Healthcare. Our team will verify your medical order and send an official invoice/dispatch confirmation via WhatsApp & Email.</p>
           <div class="impact-reminder-box">
-            🌱 <strong>Social Impact:</strong> Your order directly contributes to sustaining a 260 pax sustainable community comprising charity members, staff, students, and co-founders at Rumah Pengasih Warga Prihatin.
+            🌱 <strong>Social Impact:</strong> Your order directly contributes to sustaining the RPWP community comprising charity members, staff, students, and co-founders at Rumah Pengasih Warga Prihatin.
           </div>
           <button class="btn btn-primary mt-3" onclick="document.getElementById('checkout-modal').classList.remove('active')">Close</button>
         </div>

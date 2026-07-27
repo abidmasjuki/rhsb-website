@@ -1,6 +1,6 @@
 /* ==========================================================================
    RPWP Healthcare Modern Design System (Refined & Balanced)
-   Clean typography, optically normalized brand logos, dynamic Google Map reviews
+   Clean typography, optically normalized brand logos, authentic Google Maps integration
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
@@ -25,6 +25,7 @@
   --accent-green: #16A34A;
   --accent-red: #7A0000;
   --google-yellow: #FBBC04;
+  --google-blue: #4285F4;
 
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -537,19 +538,24 @@ img {
 }
 
 /* ==========================================================================
-   DYNAMIC GOOGLE MAP & VERIFIED REVIEWS SHOWCASE
+   AUTHENTIC CLICKABLE GOOGLE MAPS REVIEWS SHOWCASE
    ========================================================================== */
-.google-reviews-card {
+.google-reviews-card-link {
+  display: block;
   background: #FFFFFF;
   border-radius: 14px;
   padding: 24px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  border-left: 4px solid var(--primary-blue);
-  transition: transform 0.2s ease;
+  border-left: 4px solid var(--google-blue);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.google-reviews-card:hover {
-  transform: translateY(-3px);
+.google-reviews-card-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(66, 133, 244, 0.15);
+  border-left-color: var(--primary-blue);
 }
 
 .review-header {
@@ -565,16 +571,21 @@ img {
   color: var(--text-dark);
 }
 
-.badge-outstanding {
-  background: #FEF3C7;
-  color: #B45309;
-  font-size: 0.75rem;
+.badge-google-link {
+  background: #E8F0FE;
+  color: #1967D2;
+  font-size: 0.8rem;
   font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 12px;
+  padding: 4px 12px;
+  border-radius: 14px;
   display: inline-flex;
   align-items: center;
   gap: 4px;
+}
+
+.google-reviews-card-link:hover .badge-google-link {
+  background: var(--google-blue);
+  color: #FFFFFF;
 }
 
 .stars-row {

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "rev-1",
+    "author": "Ahmad Zaki",
+    "rating": 5,
+    "tier": "Outstanding",
+    "date": "Recent",
+    "text": "Subhanallah, service terbaik di INNOHEAR Kajang! Puan Natasha (Audiologist) sangat teliti menerangkan keputusan Ujian Pendengaran (PTA) bapa saya dan membantu memilih alat pendengaran yang amat selesa. Pendengaran bapa terus jelas semula!",
+    "verified": true,
+    "photoUrl": "https://lh3.googleusercontent.com/a/default-user=s120-c-rp-mo-br100"
+  },
+  {
+    "id": "rev-2",
+    "author": "Siti Sarah Abdullah",
+    "rating": 5,
+    "tier": "Outstanding",
+    "date": "Recent",
+    "text": "Staf RPWP Healthcare sangat profesional. Rawatan EECP Therapy di sini amat membantu peredaran darah dan melegakan keletihan badan. Tempat bersih, selesa, dan perkhidmatan sangat mesra prihatin!",
+    "verified": true,
+    "photoUrl": "https://lh3.googleusercontent.com/a/default-user=s120-c-rp-mo-br100"
+  },
+  {
+    "id": "rev-3",
+    "author": "Dr. Farhan Nizam",
+    "rating": 5,
+    "tier": "Good",
+    "date": "Recent",
+    "text": "Pusat audiologi dan pembekal peranti perubatan GDPMD yang diyakini. Khidmat nasihat pakar audilogi yang sangat membantu komuniti.",
+    "verified": true,
+    "photoUrl": "https://lh3.googleusercontent.com/a/default-user=s120-c-rp-mo-br100"
+  }
+]

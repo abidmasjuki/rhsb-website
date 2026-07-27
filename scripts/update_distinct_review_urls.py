@@ -1,0 +1,49 @@
+import json
+import os
+
+reviews_json_path = r"c:\Users\RH-Abid\My Drive\AI_Business_Empire\Antigravity\RHSB Website\js\google_reviews.json"
+
+# Each Authentic External Customer Review with its OWN UNIQUE DIRECT GOOGLE MAPS LINK!
+distinct_external_reviews = [
+    {
+        "id": "gmap-nik-asmira",
+        "author": "Nik Asmira",
+        "location": "Verified Customer • Google Maps Review (RPWP Healthcare | Innohear Kajang)",
+        "rating": 5,
+        "date": "setahun yang lalu",
+        "text": "Alhamdulilah..saya suka berurusan Rpwp..sangat berpuas hati ..saya ada masalah telinga Rpwp memberi penerangan alat mane sesuai dengan saya melayani saya sampai saya betul serasi dengan alat. Dieorang tetap bersabar. Dan layanan yang baik mesra, jika saya tersangkut jem..rpwp bertimbang rasa .ape2 bagi saya Rpwp memang terbaik. Semoga Rpwp dimurahkan rezeki dan berkembang maju amiin.",
+        "url": "https://maps.app.goo.gl/54uMagN9JnfCRUhFA"
+    },
+    {
+        "id": "gmap-sharafini",
+        "author": "sharafini Yahya",
+        "location": "Verified Customer • Google Maps Review (RPWP Healthcare | Innohear Kajang)",
+        "rating": 5,
+        "date": "2 minggu yang lalu",
+        "text": "Alhamdulillah..akhirnya dah dapat alat pendengaran disini.Pegawai (Puan Natasha) sangat membantu..memberikan penerangan yang sangat jelas dan mudah untuk difahami.. Terima kasih banyak2 ye RPWP😊😊😊😊",
+        "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT20wd1dITlVTMFJXTm1OMlRsZDRSMWcwWm0xNFIyYxAB!2m1!1s0x31cdcb8c623473e9:0x67e5f77f1bb0ebd8"
+    },
+    {
+        "id": "gmap-ahza",
+        "author": "ahza gemilang",
+        "location": "Verified Customer • Google Maps Review (RPWP Healthcare | Innohear Kajang)",
+        "rating": 5,
+        "date": "11 bulan yang lalu",
+        "text": "Perkhidmatan terbaik yang pernah dijumpai. Kalau ada bintang lebih dari 5 pun saya akan berikan. Pernah buat Hearing Aid untuk Bapa di sini dan sehingga kini mereka masih follow up. Jika ada sebarang masalah, mereka dengan senang hati membantu.",
+        "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2nKc2NHVkpjMXB2TTJ4a1VtdEpkbFJ2ZVVOMGExRRAB!2m1!1s0x31cdcb8c623473e9:0x67e5f77f1bb0ebd8"
+    },
+    {
+        "id": "gmap-meeza",
+        "author": "meeza hatta",
+        "location": "Verified Customer • Google Maps Review (RPWP Healthcare | Innohear Kajang)",
+        "rating": 5,
+        "date": "setahun yang lalu",
+        "text": "Anak saya buat pemeriksaan telinga disini. Mmg selesa, audiologist berpengalaman, anak pun happy sahaja. Staff yang ada pun peramah, kita pun selesa.",
+        "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURIdU1qcFl3EAE!2m1!1s0x31cdcb8c623473e9:0x67e5f77f1bb0ebd8"
+    }
+]
+
+with open(reviews_json_path, "w", encoding="utf-8") as f:
+    json.dump(distinct_external_reviews, f, indent=2, ensure_ascii=False)
+
+print(f"Successfully saved {len(distinct_external_reviews)} reviews with DISTINCT individual Google Maps URLs to {reviews_json_path}")

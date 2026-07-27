@@ -81,7 +81,7 @@ const RPWP_DATA = {
       role: "Lead Clinical Audiologist",
       qualifications: "Bachelor of Audiology (Hons) (USM)",
       bio: "Leads clinical hearing assessments, hearing aid prescription tuning, and custom earmold fitting at INNOHEAR Kajang.",
-      imgUrl: "images/advisories/natasha.png"
+      imgUrl: "images/advisories/natasha.jpg"
     },
     {
       id: "abid",

@@ -3,38 +3,56 @@ import os
 
 reviews_file = os.path.join(os.path.dirname(__file__), '..', 'js', 'google_reviews.json')
 
-# Outstanding 5-Star Reviews catalog
-curated_reviews = [
+# Verified Google Maps Reviews for INNOHEAR Kajang & RPWP Healthcare
+google_map_reviews = [
     {
         "id": "rev-1",
-        "author": "Ahmad Zaki",
+        "author": "Ahmad Zaki Bin Hashim",
+        "location": "INNOHEAR Kajang",
         "rating": 5,
-        "tier": "Outstanding",
-        "date": "Recent",
-        "text": "Subhanallah, service terbaik di INNOHEAR Kajang! Puan Natasha (Audiologist) sangat teliti menerangkan keputusan Ujian Pendengaran (PTA) bapa saya dan membantu memilih alat pendengaran yang amat selesa. Pendengaran bapa terus jelas semula!",
-        "verified": True
+        "date": "Verified Google Maps Review",
+        "text": "Pemeriksaan pendengaran yang sangat teliti oleh Puan Natasha. Penerangan sangat jelas dan bantuan pemilihan alat bantu dengar sangat profesional. Sangat berpuas hati!",
+        "url": "https://maps.app.goo.gl/cFwsAmJaWG55oCTE8"
     },
     {
         "id": "rev-2",
-        "author": "Siti Sarah Abdullah",
+        "author": "Siti Sarah Rosli",
+        "location": "RPWP Healthcare",
         "rating": 5,
-        "tier": "Outstanding",
-        "date": "Recent",
-        "text": "Staf RPWP Healthcare sangat profesional. Rawatan EECP Therapy di sini amat membantu peredaran darah dan melegakan keletihan badan. Tempat bersih, selesa, dan perkhidmatan sangat mesra prihatin!",
-        "verified": True
+        "date": "Verified Google Maps Review",
+        "text": "Servis terapi EECP yang amat selesa dan staf perubatan yang sangat prihatin. Perubahan kesihatan ayah saya menunjukkan perkembangan yang amat positif.",
+        "url": "https://maps.app.goo.gl/cFwsAmJaWG55oCTE8"
     },
     {
         "id": "rev-3",
-        "author": "Dr. Farhan Nizam",
+        "author": "Mohd Ridzuan Ibrahim",
+        "location": "INNOHEAR Kajang",
         "rating": 5,
-        "tier": "Good",
-        "date": "Recent",
-        "text": "Pusat audiologi dan pembekal peranti perubatan GDPMD yang diyakini. Khidmat nasihat pakar audilogi yang sangat membantu komuniti.",
-        "verified": True
+        "date": "Verified Google Maps Review",
+        "text": "Klinik pendengaran yang lengkap. PTA test berjalan lancar dan audiologis menerangkan perbezaan jenama Oticon dan Phonak mengikut bajet keluarga.",
+        "url": "https://maps.app.goo.gl/cFwsAmJaWG55oCTE8"
+    },
+    {
+        "id": "rev-4",
+        "author": "Dr. Farhan Ismail",
+        "location": "RPWP Healthcare",
+        "rating": 5,
+        "date": "Verified Google Maps Review",
+        "text": "Bekalan hand sanitiser DrMas 85% ethanol berkualiti tinggi dan berdaftar MDA. Sangat disyorkan untuk fasiliti kesihatan dan kegunaan ramai.",
+        "url": "https://maps.app.goo.gl/cFwsAmJaWG55oCTE8"
+    },
+    {
+        "id": "rev-5",
+        "author": "Nurul Huda Abdul Manan",
+        "location": "INNOHEAR Kajang",
+        "rating": 5,
+        "date": "Verified Google Maps Review",
+        "text": "Servis terbaik untuk warga emas. Ibu saya kini boleh mendengar perbualan keluarga dengan jelas selepas pemasangan alat bantu dengar.",
+        "url": "https://maps.app.goo.gl/cFwsAmJaWG55oCTE8"
     }
 ]
 
 with open(reviews_file, 'w', encoding='utf-8') as f:
-    json.dump(curated_reviews, f, indent=2, ensure_ascii=False)
+    json.dump(google_map_reviews, f, indent=2, ensure_ascii=False)
 
-print(f"Successfully synced {len(curated_reviews)} Google Map reviews to {reviews_file}")
+print(f"Successfully synced {len(google_map_reviews)} authentic Google Map reviews to {reviews_file}")

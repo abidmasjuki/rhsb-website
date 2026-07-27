@@ -1,7 +1,7 @@
 /**
  * RPWP Healthcare Data Repository
  * Version: 1.0.0
- * Contains isolated mock data and original digital assets from rpwphealthcare.com
+ * Contains all original digital assets, sections, images, and content from www.rpwphealthcare.com
  */
 
 const RPWP_DATA = {
@@ -10,7 +10,8 @@ const RPWP_DATA = {
     rpwp: "https://www.rpwphealthcare.com/img/cms/LOGO/RPWPHC/RPWPHC 21x9 150.png",
     innohear: "https://www.rpwphealthcare.com/img/cms/LOGO/INNOHEAR/INNOHEAR-500.png",
     leadercb: "https://leadercb.com/wp-content/uploads/2023/05/Logo-LCB.jpeg",
-    mda: "https://www.rpwphealthcare.com/img/cms/RPWPHC/Others/logo-mda-350.png"
+    mda: "https://www.rpwphealthcare.com/img/cms/RPWPHC/Others/logo-mda-350.png",
+    promoBanner: "https://www.rpwphealthcare.com/modules/ps_banner/img/sale70.png"
   },
   company: {
     name: "RPWP Healthcare Sdn Bhd",
@@ -31,7 +32,7 @@ const RPWP_DATA = {
         code: "MDA",
         name: "Malaysian Medical Device Authority Registered",
         logo: "https://www.rpwphealthcare.com/img/cms/RPWPHC/Others/logo-mda-350.png",
-        desc: "Enforcing medical device regulations and medical device registration."
+        desc: "Registered with the Malaysian Medical Device Authority (MDA)."
       }
     ],
     socialImpact: {
@@ -53,6 +54,72 @@ const RPWP_DATA = {
       facebook: "https://www.facebook.com/RPWPHealthcare/"
     }
   ],
+  betterHearingSteps: [
+    {
+      step: "1",
+      title: "1. Visit Our Hearing Center",
+      desc: "Schedule a comfortable consultation at INNOHEAR Kajang with our certified audiologists."
+    },
+    {
+      step: "2",
+      title: "2. Hearing Assessment",
+      desc: "Comprehensive Pure-Tone Audiometry (PTA), Otoscopy, and diagnostic ear evaluations."
+    },
+    {
+      step: "3",
+      title: "3. Try Our Hearing Solutions",
+      desc: "Experience digital prescription hearing aids and custom-fit earmolds tailored to your lifestyle."
+    }
+  ],
+  hearingLossTypes: [
+    {
+      level: "Mild Hearing Loss",
+      decibels: "26 - 40 dB",
+      desc: "Difficulty hearing soft sounds like dripping water, rustling leaves, or quiet whispers.",
+      img: "https://www.rpwphealthcare.com/img/cms/RPWPHC/Others/photo/Dripping-Water-750x500.jpg"
+    },
+    {
+      level: "Moderate Hearing Loss",
+      decibels: "41 - 55 dB",
+      desc: "Difficulty understanding conversation or soft musical tones over background room noise.",
+      img: "https://www.rpwphealthcare.com/img/cms/RPWPHC/Others/photo/piano-beginner-750x500.jpg"
+    },
+    {
+      level: "Severe Hearing Loss",
+      decibels: "71 - 90 dB",
+      desc: "Speech is inaudible without amplification. Only loud shouting or crying sounds can be heard.",
+      img: "https://www.rpwphealthcare.com/img/cms/RPWPHC/Others/photo/crying-kid-750x500.jpg"
+    },
+    {
+      level: "Profound Hearing Loss",
+      decibels: "91+ dB",
+      desc: "Extreme hearing difficulty. Only extremely loud industrial sounds like jackhammers are felt.",
+      img: "https://www.rpwphealthcare.com/img/cms/RPWPHC/Others/photo/jack-hammer-750x500.jpg"
+    }
+  ],
+  eecpService: {
+    title: "State-of-the-Art High Premium EECP Therapy Service",
+    subtitle: "Advanced Non-Invasive Cardiovascular Counterpulsation Therapy",
+    desc: "Our medical center provides non-invasive, outpatient Enhanced External Counterpulsation (EECP) therapy using state-of-the-art high premium cardiac equipment. Guided by ECG synchronization, sequential pneumatic pressure cuffs promote natural collateral circulation ('Natural Bypass') without surgery or downtime.",
+    mechanisms: [
+      {
+        title: "Wall Shear Stress (WSS)",
+        desc: "Sequential pressure pulses generate shear stress along blood vessel walls to activate mechanosensors."
+      },
+      {
+        title: "Nitric Oxide (NO) Boost",
+        desc: "Stimulates endothelial Nitric Oxide release to relax vascular smooth muscle and restore vessel elasticity."
+      },
+      {
+        title: "VEGF Angiogenesis",
+        desc: "Promotes Vascular Endothelial Growth Factor for natural collateral blood vessel formation."
+      },
+      {
+        title: "LVEF Augmentation",
+        desc: "Rapid cuff deflation during systole reduces cardiac afterload workload and boosts Left Ventricular Ejection Fraction."
+      }
+    ]
+  },
   advisoryBoard: [
     {
       id: "dr-masjuki",
@@ -127,14 +194,14 @@ const RPWP_DATA = {
   ],
   products: [
     {
-      id: "prod-eecp-system",
-      name: "OMAY Latest-Gen EECP Therapy System",
+      id: "prod-high-premium-eecp",
+      name: "State-of-the-Art High Premium EECP Therapy Service",
       category: "eecp",
-      badge: "Cardiac Technology",
-      priceMYR: 125000.00,
+      badge: "Cardiac Service",
+      priceMYR: 12500.00,
       img: "https://www.rpwphealthcare.com/img/cms/RPWPHC/Others/photo/piano-beginner-750x500.jpg",
-      shortDesc: "OMAY Latest-Generation Enhanced External Counterpulsation ECG-synchronized system for non-invasive natural bypass therapy.",
-      fullDesc: "Manufactured by OMAY (Guangzhou) Medical Technologies under Technical Director Dr. Zhou Shao Chun and pioneer inventor Dr. Zheng Zhen Shen. Features 3 sequential pneumatic cuffs (calves, lower thighs, upper thighs), 3-lead ECG heart syncing, Nitric Oxide boost, VEGF collateral vessel angiogenesis, and LVEF augmentation."
+      shortDesc: "High Premium Non-Invasive Cardiovascular Counterpulsation Therapy (35-session treatment regimen).",
+      fullDesc: "ECG-synchronized high premium EECP therapy to stimulate Nitric Oxide release, VEGF angiogenesis, Wall Shear Stress, and LVEF augmentation."
     },
     {
       id: "prod-resound-quattro",

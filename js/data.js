@@ -47,7 +47,6 @@ const RPWP_DATA = {
       name: "RPWP HEALTHCARE (INNOHEAR Kajang)",
       address: "A-01-05, Jalan Seri Kenari 10, Taman Seri Kenari, 43000 Kajang, Selangor, Malaysia",
       phone: "(+60) 19-680 8697",
-      phoneAlt: "(+60) 019-5588520",
       whatsapp: "https://wa.me/60196808697/?text=Salam%20RPWP%20Healthcare",
       waze: "https://waze.com/ul/hw2835bc0x",
       googleMaps: "https://maps.app.goo.gl/cFwsAmJaWG55oCTE8",

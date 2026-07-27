@@ -32,14 +32,14 @@ class BookingModal {
     body.innerHTML = `
       <div class="booking-container">
         <h3 class="booking-title">Schedule Clinical Consultation & Screening</h3>
-        <p class="booking-desc">Book your non-invasive assessment at INNOHEAR Kajang & RPWP Healthcare Center.</p>
+        <p class="booking-desc">Book your non-invasive assessment at RPWP Healthcare Center Kajang.</p>
 
         <div class="booking-type-toggle">
           <button class="type-toggle-btn ${this.selectedType === 'eecp' ? 'active' : ''}" onclick="window.bookingModal.setType('eecp')">
             🫀 OMAY EECP Therapy Screening
           </button>
           <button class="type-toggle-btn ${this.selectedType === 'hearing' ? 'active' : ''}" onclick="window.bookingModal.setType('hearing')">
-            👂 INNOHEAR Hearing Assessment
+            👂 Clinical Hearing Assessment
           </button>
         </div>
 
@@ -65,7 +65,7 @@ class BookingModal {
             <div class="form-group">
               <label>Preferred Center *</label>
               <select class="form-control" required id="book-branch">
-                <option value="INNOHEAR Kajang (A-01-05 Jalan Seri Kenari 10)">INNOHEAR Kajang - A-01-05 Jalan Seri Kenari 10, Taman Seri Kenari</option>
+                <option value="RPWP Healthcare Kajang (A-01-05 Jalan Seri Kenari 10)">RPWP Healthcare Kajang - A-01-05 Jalan Seri Kenari 10, Taman Seri Kenari</option>
               </select>
             </div>
 
@@ -132,7 +132,7 @@ class BookingModal {
       `👤 *Patient:* ${name}\n` +
       `🩺 *Service:* ${service}\n` +
       `📅 *Date/Time:* ${date} (${time})\n` +
-      `📍 *Center:* INNOHEAR Kajang\n\n` +
+      `📍 *Center:* RPWP Healthcare Kajang\n\n` +
       `Please confirm my slot. Thank you!`
     );
 

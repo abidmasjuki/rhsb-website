@@ -161,7 +161,7 @@ class EECPWizard {
               <p>Your responses match the primary indications for <strong>OMAY Latest-Gen EECP Natural Bypass Therapy</strong>. A 35-session regimen can significantly improve collateral circulation, Nitric Oxide release, and cardiac ejection fraction.</p>
               <div class="result-summary-box">
                 <div class="sum-item"><strong>Recommended Regimen:</strong> 35 Sessions (45-60 min daily)</div>
-                <div class="sum-item"><strong>Location:</strong> INNOHEAR Kajang / RPWP Medical Center</div>
+                <div class="sum-item"><strong>Location:</strong> RPWP Healthcare Kajang</div>
                 <div class="sum-item"><strong>Pre-Screening:</strong> Free Vitals & ECG Baseline Included</div>
               </div>
               <div class="action-buttons">

@@ -80,7 +80,7 @@ const RPWP_DATA = {
       name: "Nurul Natasha Mohd Razdi",
       role: "Lead Clinical Audiologist",
       qualifications: "Bachelor of Audiology (Hons) (USM)",
-      bio: "Leads clinical hearing assessments, hearing aid prescription tuning, and custom earmold fitting at INNOHEAR Kajang.",
+      bio: "Leads clinical hearing assessments, hearing aid prescription tuning, and custom earmold fitting at RPWP Healthcare Kajang Branch.",
       imgUrl: "images/advisories/natasha.jpg"
     },
     {

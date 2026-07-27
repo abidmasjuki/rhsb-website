@@ -173,7 +173,7 @@ class HearingWizard {
               </ul>
             </div>
             <div class="action-buttons">
-              <button class="btn btn-primary" onclick="window.hearingWizard.close(); window.bookingModal.open('hearing', 'Diagnostic Hearing Assessment');">Book Free Hearing Assessment at INNOHEAR Kajang</button>
+              <button class="btn btn-primary" onclick="window.hearingWizard.close(); window.bookingModal.open('hearing', 'Diagnostic Hearing Assessment');">Book Free Diagnostic Hearing Assessment</button>
               <button class="btn btn-outline" onclick="window.cartManager.addItem('${recommendedProduct.id}')">Add Device to Wishlist/Cart</button>
             </div>
           </div>

@@ -1,6 +1,6 @@
 /* ==========================================================================
    RPWP Healthcare Modern Design System (Refined & Balanced)
-   Clean typography, tight "rapat-rapat" prominent brand logos, authentic Google Maps
+   Clean typography, optically balanced brand logos, authentic Google Maps
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
@@ -189,6 +189,15 @@ img {
 
 .btn-blue:hover {
   background: var(--primary-blue-dark);
+}
+
+.btn-orange {
+  background: #EE4D2D; /* Shopee Orange */
+  color: var(--text-white);
+}
+
+.btn-orange:hover {
+  background: #D73211;
 }
 
 .btn-white {
@@ -438,6 +447,15 @@ img {
   align-items: center;
 }
 
+.price-tag-clinical {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  background: #EFF6FF;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
 .price-tag {
   font-size: 1.3rem;
   font-weight: 800;
@@ -489,13 +507,13 @@ img {
 }
 
 /* ==========================================================================
-   RAPAT-RAPAT PROMINENT SINGLE LINE HEARING AID BRAND LOGOS
+   BALANCED PROMINENT SINGLE LINE HEARING AID BRAND LOGOS
    ========================================================================== */
 .brands-single-row {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: 28px;
   padding: 25px 0;
   flex-wrap: nowrap;
   width: 100%;
@@ -515,7 +533,7 @@ img {
 }
 
 .brand-normalized-img {
-  height: 68px;
+  height: 80px;
   width: auto;
   max-width: 260px;
   object-fit: contain;
@@ -651,11 +669,11 @@ img {
 /* Responsive */
 @media (max-width: 992px) {
   .brands-single-row { flex-wrap: wrap; gap: 16px; }
-  .brand-normalized-img { height: 50px; }
+  .brand-normalized-img { height: 55px; }
 }
 
 @media (max-width: 768px) {
-  .brand-normalized-img { height: 42px; }
+  .brand-normalized-img { height: 45px; }
   .hero-title { font-size: 2.2rem; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }

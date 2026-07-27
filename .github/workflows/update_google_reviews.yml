@@ -1,9 +1,9 @@
-name: Automated Monthly Google Reviews Sync
+name: Automated Bi-Monthly Google Reviews Sync
 
 on:
   schedule:
-    # Runs on the 1st of every month at 00:00 UTC
-    - cron: '0 0 1 * *'
+    # Runs on the 1st day of every 2nd month at 00:00 UTC (Once every 2 months)
+    - cron: '0 0 1 */2 *'
   workflow_dispatch:
 
 jobs:
@@ -18,10 +18,11 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install Dependencies
+      - name: Install Dependencies & Playwright Browsers
         run: |
           python -m pip install --upgrade pip
-          pip install requests beautifulsoup4
+          pip install playwright requests beautifulsoup4
+          playwright install --with-deps chromium
 
       - name: Run Google Reviews Sync Script
         run: python scripts/sync_google_reviews.py
@@ -31,4 +32,4 @@ jobs:
           git config --global user.name "RPWP Review Bot"
           git config --global user.email "bot@rpwphealthcare.com"
           git add js/google_reviews.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(cron): monthly sync of 5-star Google Map reviews [skip ci]" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(cron): bi-monthly sync of verified external Google Map reviews [skip ci]" && git push)

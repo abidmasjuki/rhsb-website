@@ -1,6 +1,6 @@
 /* ==========================================================================
-   RPWP Healthcare Modern Design System (Full-Box Advisory Portraits & MDA Logo)
-   Clean typography, full-card portrait advisory cards, dual MDA & LeaderCB badges
+   RPWP Healthcare Modern Design System (Uniform 1:1 Executive Advisory Portraits)
+   Clean typography, optically balanced brand logos, 100% centered advisory portraits
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
@@ -455,7 +455,7 @@ img {
 }
 
 /* ==========================================================================
-   FULL-BOX PORTRAIT ADVISORY CARDS (FILLS THE ENTIRE CARD FRAME PROMINENTLY!)
+   UNIFORM 1:1 SQUARE EXECUTIVE ADVISORY PORTRAITS (100% CENTERED & BALANCED!)
    ========================================================================== */
 .advisory-card-balanced {
   background: #FFFFFF;
@@ -475,11 +475,11 @@ img {
 
 .advisory-avatar {
   width: 100%;
-  height: 260px;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  object-position: center 15%;
   border-radius: 0;
   border: none;
+  background-color: #F8FAFC;
   transition: transform 0.3s ease;
 }
 

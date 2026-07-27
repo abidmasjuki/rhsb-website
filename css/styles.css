@@ -1,6 +1,6 @@
 /* ==========================================================================
    RPWP Healthcare Modern Design System (Refined & Balanced)
-   Clean typography, balanced brand logos, dedicated INNOHEAR section, proportional advisory cards
+   Clean typography, optically normalized brand logos, clean INNOHEAR section
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
@@ -382,6 +382,9 @@ img {
   position: relative;
   overflow: hidden;
   background: #F1F5F9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .media-img {
@@ -440,7 +443,7 @@ img {
 }
 
 /* ==========================================================================
-   PROPORTIONAL & BALANCED ADVISORY PANEL CARDS (Clean Grid)
+   PROPORTIONAL ADVISORY CARDS
    ========================================================================== */
 .advisory-card-balanced {
   background: #FFFFFF;
@@ -484,47 +487,52 @@ img {
 }
 
 /* ==========================================================================
-   EQUAL & VISUALLY BALANCED HEARING BRAND CARDS
+   OPTICALLY NORMALIZED SINGLE HORIZONTAL LINE HEARING AID BRAND LOGOS
    ========================================================================== */
-.brands-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+.brands-single-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 40px;
+  padding: 20px 0;
+  flex-wrap: wrap;
 }
 
-.brand-card-equal {
-  background: #FFFFFF;
-  border-radius: 12px;
-  height: 100px;
-  padding: 16px 24px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+.brand-logo-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 10px 20px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.brand-card-equal:hover {
+.brand-logo-item:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-.brand-img-normalized {
-  max-height: 48px;
-  max-width: 160px;
+.brand-normalized-img {
+  height: 52px;
   width: auto;
-  height: auto;
+  max-width: 220px;
   object-fit: contain;
 }
 
-/* Dedicated INNOHEAR Kajang Section */
-.innohear-section {
-  background: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 100%);
+/* Dedicated INNOHEAR Section (Clean, Boxless) */
+.innohear-clean-box {
+  background: #FFFFFF;
   border-radius: 18px;
-  padding: 45px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-  margin: 50px auto;
+  padding: 45px 35px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto;
   border: 1px solid #E2E8F0;
+}
+
+.innohear-logo-img {
+  height: 75px;
+  margin: 0 auto 16px auto;
+  object-fit: contain;
 }
 
 /* Site Footer */
@@ -574,17 +582,14 @@ img {
 }
 
 /* Responsive */
-@media (max-width: 992px) {
-  .brands-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
 @media (max-width: 768px) {
+  .brands-single-row { flex-wrap: wrap; gap: 20px; }
+  .brand-normalized-img { height: 40px; }
   .hero-title { font-size: 2.2rem; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 480px) {
-  .brands-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .top-bar-flex { flex-direction: column; text-align: center; }
 }

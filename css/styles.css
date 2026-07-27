@@ -1,6 +1,6 @@
 /* ==========================================================================
    RPWP Healthcare Modern Design System (Refined & Balanced)
-   Clean typography, optically normalized brand logos, authentic Google Maps integration
+   Clean typography, tight "rapat-rapat" prominent brand logos, authentic Google Maps
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
@@ -489,33 +489,35 @@ img {
 }
 
 /* ==========================================================================
-   OPTICALLY NORMALIZED SINGLE HORIZONTAL LINE HEARING AID BRAND LOGOS
+   RAPAT-RAPAT PROMINENT SINGLE LINE HEARING AID BRAND LOGOS
    ========================================================================== */
 .brands-single-row {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  gap: 40px;
-  padding: 20px 0;
-  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 25px 0;
+  flex-wrap: nowrap;
+  width: 100%;
 }
 
 .brand-logo-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 20px;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  padding: 8px 14px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
 }
 
 .brand-logo-item:hover {
-  transform: translateY(-3px);
+  transform: scale(1.06);
 }
 
 .brand-normalized-img {
-  height: 52px;
+  height: 68px;
   width: auto;
-  max-width: 220px;
+  max-width: 260px;
   object-fit: contain;
 }
 
@@ -647,9 +649,13 @@ img {
 }
 
 /* Responsive */
+@media (max-width: 992px) {
+  .brands-single-row { flex-wrap: wrap; gap: 16px; }
+  .brand-normalized-img { height: 50px; }
+}
+
 @media (max-width: 768px) {
-  .brands-single-row { flex-wrap: wrap; gap: 20px; }
-  .brand-normalized-img { height: 40px; }
+  .brand-normalized-img { height: 42px; }
   .hero-title { font-size: 2.2rem; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }

@@ -1,6 +1,6 @@
 /* ==========================================================================
    RPWP Healthcare Modern Design System (Refined & Balanced)
-   Clean typography, optically balanced brand logos, authentic Google Maps
+   Clean typography, combined INNOHEAR & Google Reviews section, natural linkable text
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
@@ -192,7 +192,7 @@ img {
 }
 
 .btn-orange {
-  background: #EE4D2D; /* Shopee Orange */
+  background: #EE4D2D;
   color: var(--text-white);
 }
 
@@ -456,12 +456,6 @@ img {
   border-radius: 6px;
 }
 
-.price-tag {
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: var(--top-bar-bg);
-}
-
 /* ==========================================================================
    PROPORTIONAL ADVISORY CARDS
    ========================================================================== */
@@ -539,16 +533,21 @@ img {
   object-fit: contain;
 }
 
-/* Dedicated INNOHEAR Section */
-.innohear-clean-box {
-  background: #FFFFFF;
-  border-radius: 18px;
+/* ==========================================================================
+   COMBINED UNIFIED INNOHEAR BRANCH & VERIFIED REVIEWS SECTION
+   ========================================================================== */
+.innohear-reviews-wrapper {
+  background: var(--bg-subtle);
+  border-radius: 20px;
   padding: 45px 35px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-  text-align: center;
-  max-width: 850px;
-  margin: 0 auto;
   border: 1px solid #E2E8F0;
+}
+
+.innohear-header-card {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
 }
 
 .innohear-logo-img {
@@ -557,55 +556,36 @@ img {
   object-fit: contain;
 }
 
-/* ==========================================================================
-   AUTHENTIC CLICKABLE GOOGLE MAPS REVIEWS SHOWCASE
-   ========================================================================== */
-.google-reviews-card-link {
+/* Natural Linkable Review Cards (No Cheesy Badges / No "Click Here" / No "www.") */
+.natural-review-card {
   display: block;
   background: #FFFFFF;
   border-radius: 14px;
   padding: 24px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  border-left: 4px solid var(--google-blue);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid var(--primary-blue);
   text-decoration: none;
   color: inherit;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.google-reviews-card-link:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(66, 133, 244, 0.15);
-  border-left-color: var(--primary-blue);
+.natural-review-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(37, 99, 235, 0.12);
 }
 
-.review-header {
+.natural-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--nav-bg);
+  margin-bottom: 6px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 12px;
 }
 
-.reviewer-name {
-  font-weight: 700;
-  font-size: 1.05rem;
-  color: var(--text-dark);
-}
-
-.badge-google-link {
-  background: #E8F0FE;
-  color: #1967D2;
-  font-size: 0.8rem;
-  font-weight: 700;
-  padding: 4px 12px;
-  border-radius: 14px;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.google-reviews-card-link:hover .badge-google-link {
-  background: var(--google-blue);
-  color: #FFFFFF;
+.natural-card-title:hover {
+  color: var(--primary-blue);
 }
 
 .stars-row {

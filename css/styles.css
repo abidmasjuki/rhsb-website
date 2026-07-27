@@ -550,6 +550,14 @@ img {
   margin-top: 30px;
 }
 
+.innohear-logo-img {
+  display: block;
+  margin: 0 auto 16px auto;
+  max-height: 75px;
+  width: auto;
+  object-fit: contain;
+}
+
 .reviews-scroll-carousel {
   display: flex;
   gap: 22px;

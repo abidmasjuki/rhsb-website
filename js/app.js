@@ -85,49 +85,93 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Interactive Hearing Screener Logic
-const screenerQuestions = [
-  {
-    title: "1. Adakah anda kerap menghadapi kesukaran memahami perbualan di tempat berbunyi bising (restoran, kenduri, atau majlis keluarga)?",
-    options: [
-      { text: "Ya, sangat kerap / selalu", points: 2 },
-      { text: "Kadang-kadang", points: 1 },
-      { text: "Jarang / Tidak pernah", points: 0 }
-    ]
-  },
-  {
-    title: "2. Adakah ahli keluarga atau rakan sering menegur bahawa bunyi TV, radio, atau telefon anda terlalu kuat?",
-    options: [
-      { text: "Ya, selalu ditegur", points: 2 },
-      { text: "Pernah beberapa kali", points: 1 },
-      { text: "Tidak pernah", points: 0 }
-    ]
-  },
-  {
-    title: "3. Adakah anda kerap meminta orang lain mengulang perbualan atau merasakan orang sekeliling bercakap perlahan/bergumam?",
-    options: [
-      { text: "Ya, kerap sangat", points: 2 },
-      { text: "Kadang-kadang", points: 1 },
-      { text: "Tidak pernah", points: 0 }
-    ]
-  },
-  {
-    title: "4. Adakah anda mengalami bunyi berdesing, berdengung, atau berdesir dalam telinga (tinnitus)?",
-    options: [
-      { text: "Ya, ada berbunyi", points: 2 },
-      { text: "Kadang-kadang berbunyi", points: 1 },
-      { text: "Tiada langsung", points: 0 }
-    ]
-  },
-  {
-    title: "5. Adakah anda sukar mendengar suara panggil atau perbualan melalui telefon dengan jelas?",
-    options: [
-      { text: "Ya, sukar mendengar di telefon", points: 2 },
-      { text: "Sederhana", points: 1 },
-      { text: "Jelas dan tiada masalah", points: 0 }
-    ]
-  }
-];
+// Interactive Hearing Screener Logic (Bilingual EN / BM)
+const screenerQuestionsData = {
+  en: [
+    {
+      title: "1. Do you frequently struggle to understand conversations in noisy environments (restaurants, gatherings, or family events)?",
+      options: [
+        { text: "Yes, very frequently / always", points: 2 },
+        { text: "Sometimes", points: 1 },
+        { text: "Rarely / Never", points: 0 }
+      ]
+    },
+    {
+      title: "2. Do family members or friends often complain that your TV, radio, or phone volume is too loud?",
+      options: [
+        { text: "Yes, frequently complained about", points: 2 },
+        { text: "A few times", points: 1 },
+        { text: "Never", points: 0 }
+      ]
+    },
+    {
+      title: "3. Do you find yourself frequently asking people to repeat themselves or feeling that others are mumbling?",
+      options: [
+        { text: "Yes, very often", points: 2 },
+        { text: "Sometimes", points: 1 },
+        { text: "Never", points: 0 }
+      ]
+    },
+    {
+      title: "4. Do you experience ringing, buzzing, or hissing sounds in your ears (tinnitus)?",
+      options: [
+        { text: "Yes, persistent ringing", points: 2 },
+        { text: "Occasional ringing", points: 1 },
+        { text: "None at all", points: 0 }
+      ]
+    },
+    {
+      title: "5. Do you have difficulty hearing phone calls or online meetings clearly?",
+      options: [
+        { text: "Yes, difficult to hear calls", points: 2 },
+        { text: "Moderate difficulty", points: 1 },
+        { text: "Clear with no issues", points: 0 }
+      ]
+    }
+  ],
+  bm: [
+    {
+      title: "1. Adakah anda kerap menghadapi kesukaran memahami perbualan di tempat berbunyi bising (restoran, kenduri, atau majlis keluarga)?",
+      options: [
+        { text: "Ya, sangat kerap / selalu", points: 2 },
+        { text: "Kadang-kadang", points: 1 },
+        { text: "Jarang / Tidak pernah", points: 0 }
+      ]
+    },
+    {
+      title: "2. Adakah ahli keluarga atau rakan sering menegur bahawa bunyi TV, radio, atau telefon anda terlalu kuat?",
+      options: [
+        { text: "Ya, selalu ditegur", points: 2 },
+        { text: "Pernah beberapa kali", points: 1 },
+        { text: "Tidak pernah", points: 0 }
+      ]
+    },
+    {
+      title: "3. Adakah anda kerap meminta orang lain mengulang perbualan atau merasakan orang sekeliling bercakap perlahan/bergumam?",
+      options: [
+        { text: "Ya, kerap sangat", points: 2 },
+        { text: "Kadang-kadang", points: 1 },
+        { text: "Tidak pernah", points: 0 }
+      ]
+    },
+    {
+      title: "4. Adakah anda mengalami bunyi berdesing, berdengung, atau berdesir dalam telinga (tinnitus)?",
+      options: [
+        { text: "Ya, ada berbunyi", points: 2 },
+        { text: "Kadang-kadang berbunyi", points: 1 },
+        { text: "Tiada langsung", points: 0 }
+      ]
+    },
+    {
+      title: "5. Adakah anda sukar mendengar suara panggil atau perbualan melalui telefon dengan jelas?",
+      options: [
+        { text: "Ya, sukar mendengar di telefon", points: 2 },
+        { text: "Sederhana", points: 1 },
+        { text: "Jelas dan tiada masalah", points: 0 }
+      ]
+    }
+  ]
+};
 
 let currentScreenerStep = 0;
 let totalScreenerPoints = 0;
@@ -140,12 +184,18 @@ function renderScreenerQuestion() {
   const optContainer = document.getElementById("screenerOptionsContainer");
   const qTitle = document.getElementById("screenerQuestionTitle");
 
-  if (!qBox || currentScreenerStep >= screenerQuestions.length) return;
+  const lang = localStorage.getItem("rpwp_lang") || "en";
+  const questions = screenerQuestionsData[lang] || screenerQuestionsData.en;
 
-  const q = screenerQuestions[currentScreenerStep];
-  const percent = Math.round(((currentScreenerStep + 1) / screenerQuestions.length) * 100);
+  if (!qBox || currentScreenerStep >= questions.length) return;
 
-  if (stepText) stepText.textContent = `Soalan ${currentScreenerStep + 1} daripada 5`;
+  const q = questions[currentScreenerStep];
+  const percent = Math.round(((currentScreenerStep + 1) / questions.length) * 100);
+
+  const stepPrefix = lang === "bm" ? "Soalan" : "Question";
+  const stepOf = lang === "bm" ? "daripada" : "of";
+
+  if (stepText) stepText.textContent = `${stepPrefix} ${currentScreenerStep + 1} ${stepOf} ${questions.length}`;
   if (percentText) percentText.textContent = `${percent}%`;
   if (progressBar) progressBar.style.width = `${percent}%`;
 
@@ -163,7 +213,10 @@ function handleScreenerAnswer(points) {
   totalScreenerPoints += points;
   currentScreenerStep++;
 
-  if (currentScreenerStep < screenerQuestions.length) {
+  const lang = localStorage.getItem("rpwp_lang") || "en";
+  const questions = screenerQuestionsData[lang] || screenerQuestionsData.en;
+
+  if (currentScreenerStep < questions.length) {
     renderScreenerQuestion();
   } else {
     showScreenerResults();
@@ -184,30 +237,47 @@ function showScreenerResults() {
   if (pBox) pBox.style.display = "none";
   if (rBox) rBox.style.display = "block";
 
+  const lang = localStorage.getItem("rpwp_lang") || "en";
+
   let riskLevel = "";
   let titleText = "";
   let descText = "";
   let badgeBg = "";
-  let badgeColor = "";
+  let badgeColor = "#FFFFFF";
 
   if (totalScreenerPoints >= 6) {
-    riskLevel = "Tahap Risiko Tinggi (High Clinical Indication)";
     badgeBg = "#EF4444";
-    badgeColor = "#FFFFFF";
-    titleText = "⚠️ Indikasi Masalah Pendengaran Klinikal";
-    descText = "Jawapan anda menunjukkan tanda-tanda signifikan penurunan pendengaran. Sangat disyorkan untuk menjalani Ujian Pendengaran Nada Tulen (Pure Tone Audiometry) rasmi di cawangan INNOHEAR Kajang bersama Pegawai Audiologi bertauliah.";
+    if (lang === "bm") {
+      riskLevel = "Tahap Risiko Tinggi (High Clinical Indication)";
+      titleText = "⚠️ Indikasi Masalah Pendengaran Klinikal";
+      descText = "Jawapan anda menunjukkan tanda-tanda signifikan penurunan pendengaran. Sangat disyorkan untuk menjalani Ujian Pendengaran Nada Tulen (Pure Tone Audiometry) rasmi di cawangan INNOHEAR Kajang bersama Pegawai Audiologi bertauliah.";
+    } else {
+      riskLevel = "High Risk Level (High Clinical Indication)";
+      titleText = "⚠️ Clinical Hearing Loss Indication";
+      descText = "Your answers indicate significant signs of hearing strain or impairment. It is strongly recommended to schedule an official Pure Tone Audiometry (PTA) evaluation at INNOHEAR Kajang with a certified clinical audiologist.";
+    }
   } else if (totalScreenerPoints >= 3) {
-    riskLevel = "Tahap Risiko Sederhana (Moderate Risk)";
     badgeBg = "#F59E0B";
-    badgeColor = "#FFFFFF";
-    titleText = "⚡ Tanda-tanda Keletihan & Beban Pendengaran";
-    descText = "Anda mempunyai beberapa simptom penurunan pendengaran ringan/sederhana. Pemeriksaan diagnostik awal amat digalakkan bagi memelihara kejelasan pendengaran anda.";
+    if (lang === "bm") {
+      riskLevel = "Tahap Risiko Sederhana (Moderate Risk)";
+      titleText = "⚡ Tanda-tanda Keletihan & Beban Pendengaran";
+      descText = "Anda mempunyai beberapa simptom penurunan pendengaran ringan/sederhana. Pemeriksaan diagnostik awal amat digalakkan bagi memelihara kejelasan pendengaran anda.";
+    } else {
+      riskLevel = "Moderate Risk Level (Hearing Strain)";
+      titleText = "⚡ Mild to Moderate Hearing Strain";
+      descText = "You are experiencing mild to moderate hearing difficulty symptoms. An early diagnostic hearing assessment is recommended to maintain speech clarity and prevent further loss.";
+    }
   } else {
-    riskLevel = "Tahap Sihat / Risiko Rendah (Low Risk)";
     badgeBg = "#10B981";
-    badgeColor = "#FFFFFF";
-    titleText = "✅ Pendengaran Dalam Keadaan Baik";
-    descText = "Tahniah! Keputusan anda menunjukkan risiko yang sangat rendah. Kekalkan amalan penjagaan pendengaran yang sihat dan lakukan ujian berkala tahunan.";
+    if (lang === "bm") {
+      riskLevel = "Tahap Sihat / Risiko Rendah (Low Risk)";
+      titleText = "✅ Pendengaran Dalam Keadaan Baik";
+      descText = "Tahniah! Keputusan anda menunjukkan risiko yang sangat rendah. Kekalkan amalan penjagaan pendengaran yang sihat dan lakukan ujian berkala tahunan.";
+    } else {
+      riskLevel = "Healthy / Low Risk Level";
+      titleText = "✅ Good Hearing Health";
+      descText = "Congratulations! Your results indicate a low risk of hearing loss. Maintain healthy hearing habits and schedule routine annual audiometry checks.";
+    }
   }
 
   if (rBadge) {
@@ -219,8 +289,13 @@ function showScreenerResults() {
   if (rDesc) rDesc.textContent = descText;
 
   if (rBtn) {
-    const waText = encodeURIComponent(`Salam RPWP Healthcare. Saya telah melengkapkan Ujian Saringan Pendengaran Interaktif di laman web (Keputusan: ${riskLevel}, Markah: ${totalScreenerPoints}/10). Saya ingin membuat temjanji ujian pendengaran di INNOHEAR Kajang.`);
+    const waText = encodeURIComponent(
+      lang === "bm"
+        ? `Salam RPWP Healthcare. Saya telah melengkapkan Ujian Saringan Pendengaran Interaktif di laman web (Keputusan: ${riskLevel}, Markah: ${totalScreenerPoints}/10). Saya ingin membuat temjanji ujian pendengaran di INNOHEAR Kajang.`
+        : `Hello RPWP Healthcare. I completed the Interactive Hearing Self-Assessment Screener on your website (Result: ${riskLevel}, Score: ${totalScreenerPoints}/10). I would like to book a clinical hearing diagnostic test at INNOHEAR Kajang.`
+    );
     rBtn.href = `https://wa.me/60196808697/?text=${waText}`;
+    rBtn.textContent = lang === "bm" ? "Tempah Ujian Pendengaran di INNOHEAR Kajang ↗" : "Book Hearing Test at INNOHEAR Kajang ↗";
   }
 }
 

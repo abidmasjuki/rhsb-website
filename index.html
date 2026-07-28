@@ -26,8 +26,13 @@
         <input type="text" class="search-input" placeholder="Search hearing aids, DrMas sanitisers, EECP therapy...">
       </div>
 
-      <div>
-        <a href="https://wa.me/60196808697/?text=Salam%20RPWP%20Healthcare" target="_blank" class="btn btn-green">
+      <div style="display: flex; align-items: center; gap: 15px;">
+        <button id="langToggleBtn" class="lang-toggle-btn" onclick="toggleLanguage()" aria-label="Toggle Language EN BM" title="Switch Language EN / BM">
+          <span id="langLabelEN" class="lang-code active-lang">EN</span>
+          <span class="lang-divider">|</span>
+          <span id="langLabelBM" class="lang-code">BM</span>
+        </button>
+        <a href="https://wa.me/60196808697/?text=Salam%20RPWP%20Healthcare" target="_blank" class="btn btn-green" data-i18n="nav_whatsapp">
           WhatsApp Consultant
         </a>
       </div>
@@ -38,13 +43,13 @@
   <nav class="site-nav">
     <div class="container">
       <ul class="nav-list">
-        <li class="nav-link active"><a href="index.html">Home</a></li>
-        <li class="nav-link"><a href="audiometric-mobile.html">Mobile Audiometry</a></li>
-        <li class="nav-link"><a href="ppe.html">PPE Story & Products</a></li>
-        <li class="nav-link"><a href="#hearing-brands">Hearing Aids</a></li>
-        <li class="nav-link"><a href="eecp.html">EECP Therapy</a></li>
-        <li class="nav-link"><a href="#products">Medical Supplies</a></li>
-        <li class="nav-link"><a href="#advisory">Advisory Panel</a></li>
+        <li class="nav-link active"><a href="index.html" data-i18n="nav_home">Home</a></li>
+        <li class="nav-link"><a href="audiometric-mobile.html" data-i18n="nav_mobile_audio">Mobile Audiometry</a></li>
+        <li class="nav-link"><a href="ppe.html" data-i18n="nav_ppe">PPE Story & Products</a></li>
+        <li class="nav-link"><a href="#hearing-brands" data-i18n="nav_hearing">Hearing Aids</a></li>
+        <li class="nav-link"><a href="eecp.html" data-i18n="nav_eecp">EECP Therapy</a></li>
+        <li class="nav-link"><a href="#products" data-i18n="nav_supplies">Medical Supplies</a></li>
+        <li class="nav-link"><a href="#advisory" data-i18n="nav_advisory">Advisory Panel</a></li>
       </ul>
     </div>
   </nav>
@@ -52,16 +57,16 @@
   <!-- 3. Classic Hero Banner (WITH ELEGANT CLINICAL BACKDROP IMAGE & GRADIENT OVERLAY) -->
   <section class="hero-section" style="background: linear-gradient(135deg, rgba(15,23,42,0.88), rgba(30,58,138,0.92)), url('images/mobile-audiometry-van.jpg') center/cover no-repeat;">
     <div class="container">
-      <div class="hero-tag">CLINICAL AUDIOLOGY, INDUSTRIAL HEALTH & CARDIOVASCULAR CARE</div>
-      <h1 class="hero-title">HEARING PROBLEM IS BIG ?</h1>
-      <h4 class="hero-subtitle">WE MAY MAKE IT SMALL FOR YOU</h4>
-      <p class="hero-text">
+      <div class="hero-tag" data-i18n="hero_tag">CLINICAL AUDIOLOGY, INDUSTRIAL HEALTH & CARDIOVASCULAR CARE</div>
+      <h1 class="hero-title" data-i18n="hero_title">HEARING PROBLEM IS BIG ?</h1>
+      <h4 class="hero-subtitle" data-i18n="hero_subtitle">WE MAY MAKE IT SMALL FOR YOU</h4>
+      <p class="hero-text" data-i18n="hero_text">
         RPWP Healthcare provides clinically proven Enhanced External Counterpulsation (EECP) cardiac therapy, diagnostic audiology, Mobile Industrial Audiometric Testing (YAPEL Ref: JKKP/2024/11-03/00014), and DrMas medical supplies. Reinvesting 100% of profits to sustain the RPWP social community.
       </p>
       <div class="hero-cta">
-        <a href="#hearing-brands" class="btn btn-green">Browse Hearing Aids</a>
-        <a href="eecp.html" class="btn btn-white">EECP Therapy Details</a>
-        <a href="https://wa.me/60196808697/?text=Salam%20RPWP%20Healthcare.%20I%20want%20to%20check%20my%20hearing" target="_blank" class="btn btn-outline-white">Schedule Hearing Test</a>
+        <a href="#hearing-brands" class="btn btn-green" data-i18n="btn_browse_hearing">Browse Hearing Aids</a>
+        <a href="eecp.html" class="btn btn-white" data-i18n="btn_eecp_details">EECP Therapy Details</a>
+        <a href="https://wa.me/60196808697/?text=Salam%20RPWP%20Healthcare.%20I%20want%20to%20check%20my%20hearing" target="_blank" class="btn btn-outline-white" data-i18n="btn_schedule_hearing">Schedule Hearing Test</a>
       </div>
     </div>
   </section>
@@ -128,8 +133,8 @@
     <div class="container">
       <div style="text-align: center; max-width: 800px; margin: 0 auto 35px auto;">
         <span style="font-size: 0.8rem; font-weight: 700; color: #60A5FA; text-transform: uppercase; letter-spacing: 1px;">Audiometric Thresholds</span>
-        <h2 class="section-title-white" style="margin-top: 6px;">Degrees of Hearing Loss & Perception</h2>
-        <p class="section-subtitle-white">Understanding decibel sound levels and how hearing impairment affects daily life</p>
+        <h2 class="section-title-white" style="margin-top: 6px;" data-i18n="hearing_degrees_title">Degrees of Hearing Loss & Perception</h2>
+        <p class="section-subtitle-white" data-i18n="hearing_degrees_subtitle">Understanding decibel sound levels and how hearing impairment affects daily life</p>
       </div>
 
       <div class="grid-4">
@@ -874,5 +879,6 @@
 
   <script src="js/data.js?v=1.0.0"></script>
   <script src="js/app.js?v=1.0.0"></script>
+  <script src="js/i18n.js?v=1.0.0"></script>
 </body>
 </html>

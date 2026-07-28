@@ -731,3 +731,42 @@ img {
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(59, 130, 246, 0.25);
 }
+
+/* EN / BM Language Toggle Pill Button */
+.lang-toggle-btn {
+  background: #F1F5F9;
+  border: 1px solid #CBD5E1;
+  border-radius: 30px;
+  padding: 6px 14px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.lang-toggle-btn:hover {
+  background: #E2E8F0;
+  border-color: #94A3B8;
+  transform: translateY(-1px);
+}
+
+.lang-code {
+  color: #64748B;
+  transition: color 0.2s ease, font-weight 0.2s ease;
+}
+
+.lang-code.active-lang {
+  color: var(--primary-blue);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.lang-divider {
+  color: #CBD5E1;
+  font-weight: 400;
+}

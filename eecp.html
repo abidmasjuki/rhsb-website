@@ -26,7 +26,12 @@
         <input type="text" class="search-input" placeholder="Search EECP protocol, hearing aids, DrMas sanitisers...">
       </div>
 
-      <div>
+      <div style="display: flex; align-items: center; gap: 15px;">
+        <button id="langToggleBtn" class="lang-toggle-btn" onclick="toggleLanguage()" aria-label="Toggle Language EN BM" title="Switch Language EN / BM">
+          <span id="langLabelEN" class="lang-code active-lang">EN</span>
+          <span class="lang-divider">|</span>
+          <span id="langLabelBM" class="lang-code">BM</span>
+        </button>
         <a href="https://wa.me/60196808697/?text=Salam%20RPWP%20Healthcare.%20I%20want%20to%20book%20an%20EECP%20Therapy%20consultation" target="_blank" class="btn btn-green">
           Book EECP Session
         </a>
@@ -38,12 +43,12 @@
   <nav class="site-nav">
     <div class="container">
       <ul class="nav-list">
-        <li class="nav-link"><a href="index.html">Home</a></li>
-        <li class="nav-link"><a href="audiometric-mobile.html">Mobile Audiometry</a></li>
-        <li class="nav-link"><a href="ppe.html">PPE Story & Products</a></li>
-        <li class="nav-link active"><a href="eecp.html">EECP Therapy</a></li>
-        <li class="nav-link"><a href="index.html#hearing-brands">Hearing Aids</a></li>
-        <li class="nav-link"><a href="index.html#products">Medical Supplies</a></li>
+        <li class="nav-link"><a href="index.html" data-i18n="nav_home">Home</a></li>
+        <li class="nav-link"><a href="audiometric-mobile.html" data-i18n="nav_mobile_audio">Mobile Audiometry</a></li>
+        <li class="nav-link"><a href="ppe.html" data-i18n="nav_ppe">PPE Story & Products</a></li>
+        <li class="nav-link active"><a href="eecp.html" data-i18n="nav_eecp">EECP Therapy</a></li>
+        <li class="nav-link"><a href="index.html#hearing-brands" data-i18n="nav_hearing">Hearing Aids</a></li>
+        <li class="nav-link"><a href="index.html#products" data-i18n="nav_supplies">Medical Supplies</a></li>
       </ul>
     </div>
   </nav>
@@ -208,5 +213,6 @@
     </div>
   </footer>
 
+  <script src="js/i18n.js?v=1.0.0"></script>
 </body>
 </html>

@@ -29,7 +29,7 @@
 
       // Pillars
       "pillar_hearing_title": "1. Clinical Hearing Services & Hearing Aids",
-      "pillar_hearing_desc": "Certified audiology testing, Pure Tone Audiometry (PTA), ear canal otoscopy, and hearing aid fitting from global leading brands (Phonak, Oticon, ReSound, Interton) at INNOHEAR Kajang.",
+      "pillar_hearing_desc": "Certified audiology testing, Pure Tone Audiometry (PTA), ear canal otoscopy, and hearing aid fitting from global leading brands (Phonak, Oticon, ReSound, Interton) at Innohear Kajang.",
       "pillar_mobile_title": "2. YAPEL Mobile Industrial Audiometric Unit",
       "pillar_mobile_desc": "DOSH Approved Centre (Ref: JKKP/2024/11-03/00014) delivering on-site factory hearing conservation, OHD medical examination, and statutory JKKP 7 reporting with zero factory downtime.",
       "pillar_eecp_title": "3. EECP Therapy & Cardiovascular Care",
@@ -50,12 +50,12 @@
       "screener_badge": "Quick Clinical Self-Check",
       "screener_title": "Interactive Hearing Self-Assessment Screener",
       "screener_desc": "Answer these 5 simple clinical questions to evaluate hearing health for yourself or family members and receive immediate recommendations.",
-      "btn_screener_book": "Book Hearing Test at INNOHEAR Kajang ↗",
+      "btn_screener_book": "Book Hearing Test at Innohear Kajang ↗",
       "btn_screener_reset": "Retake Screener",
 
       // Innohear Branch
       "innohear_subtitle": "also known as",
-      "innohear_title": "INNOHEAR Kajang Branch",
+      "innohear_title": "Innohear Kajang Branch",
       "innohear_desc": "Our dedicated clinical audiology practice at Kajang, Selangor. Equipped with advanced diagnostic acoustic suites, ear canal otoscopy, and custom earmold fitting under certified clinical audiologists.",
       "btn_book_consultation": "Book Hearing Consultation",
       "btn_gmaps_location": "Google Maps Location",
@@ -95,7 +95,7 @@
 
       // Pillars
       "pillar_hearing_title": "1. Perkhidmatan Audiologi & Alat Pendengaran",
-      "pillar_hearing_desc": "Ujian audiologi bertauliah, Audiometri Nada Tulen (PTA), otoskopi salur telinga, dan pemadanan alat pendengaran jenama terkemuka dunia (Phonak, Oticon, ReSound, Interton) di INNOHEAR Kajang.",
+      "pillar_hearing_desc": "Ujian audiologi bertauliah, Audiometri Nada Tulen (PTA), otoskopi salur telinga, dan pemadanan alat pendengaran jenama terkemuka dunia (Phonak, Oticon, ReSound, Interton) di Innohear Kajang.",
       "pillar_mobile_title": "2. Pusat Audiometrik Bergerak YAPEL",
       "pillar_mobile_desc": "Pusat Diluluskan DOSH (Ref: JKKP/2024/11-03/00014) menyediakan pemeliharaan pendengaran kilang, pemeriksaan perubatan OHD, dan pelaporan rasmi JKKP 7 tanpa mengganggu operasi kilang.",
       "pillar_eecp_title": "3. Terapi EECP & Penjagaan Kardiovaskular",
@@ -116,12 +116,12 @@
       "screener_badge": "Semakan Kendiri Klinikal Pantas",
       "screener_title": "Ujian Saringan Pendengaran Interaktif",
       "screener_desc": "Jawab 5 soalan klinikal mudah ini untuk menilai kesihatan pendengaran anda atau ahli keluarga dan dapatkan cadangan diagnostik secara serta-merta.",
-      "btn_screener_book": "Tempah Ujian Pendengaran di INNOHEAR Kajang ↗",
+      "btn_screener_book": "Tempah Ujian Pendengaran di Innohear Kajang ↗",
       "btn_screener_reset": "Ulang Ujian Saringan",
 
       // Innohear Branch
       "innohear_subtitle": "juga dikenali sebagai",
-      "innohear_title": "Cawangan INNOHEAR Kajang",
+      "innohear_title": "Cawangan Innohear Kajang",
       "innohear_desc": "Pusat audiologi klinikal kami di Kajang, Selangor. Dilengkapi dengan bilik akustik diagnostik canggih, otoskopi salur telinga, dan acuan telinga khas di bawah Pegawai Audiologi bertauliah.",
       "btn_book_consultation": "Tempah Konsultasi Pendengaran",
       "btn_gmaps_location": "Lokasi Google Maps",

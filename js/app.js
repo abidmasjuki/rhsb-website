@@ -250,11 +250,11 @@ function showScreenerResults() {
     if (lang === "bm") {
       riskLevel = "Tahap Risiko Tinggi (High Clinical Indication)";
       titleText = "⚠️ Indikasi Masalah Pendengaran Klinikal";
-      descText = "Jawapan anda menunjukkan tanda-tanda signifikan penurunan pendengaran. Sangat disyorkan untuk menjalani Ujian Pendengaran Nada Tulen (Pure Tone Audiometry) rasmi di cawangan INNOHEAR Kajang bersama Pegawai Audiologi bertauliah.";
+      descText = "Jawapan anda menunjukkan tanda-tanda signifikan penurunan pendengaran. Sangat disyorkan untuk menjalani Ujian Pendengaran Nada Tulen (Pure Tone Audiometry) rasmi di cawangan Innohear Kajang bersama Pegawai Audiologi bertauliah.";
     } else {
       riskLevel = "High Risk Level (High Clinical Indication)";
       titleText = "⚠️ Clinical Hearing Loss Indication";
-      descText = "Your answers indicate significant signs of hearing strain or impairment. It is strongly recommended to schedule an official Pure Tone Audiometry (PTA) evaluation at INNOHEAR Kajang with a certified clinical audiologist.";
+      descText = "Your answers indicate significant signs of hearing strain or impairment. It is strongly recommended to schedule an official Pure Tone Audiometry (PTA) evaluation at Innohear Kajang with a certified clinical audiologist.";
     }
   } else if (totalScreenerPoints >= 3) {
     badgeBg = "#F59E0B";
@@ -291,11 +291,11 @@ function showScreenerResults() {
   if (rBtn) {
     const waText = encodeURIComponent(
       lang === "bm"
-        ? `Salam RPWP Healthcare. Saya telah melengkapkan Ujian Saringan Pendengaran Interaktif di laman web (Keputusan: ${riskLevel}, Markah: ${totalScreenerPoints}/10). Saya ingin membuat temjanji ujian pendengaran di INNOHEAR Kajang.`
-        : `Hello RPWP Healthcare. I completed the Interactive Hearing Self-Assessment Screener on your website (Result: ${riskLevel}, Score: ${totalScreenerPoints}/10). I would like to book a clinical hearing diagnostic test at INNOHEAR Kajang.`
+        ? `Salam RPWP Healthcare. Saya telah melengkapkan Ujian Saringan Pendengaran Interaktif di laman web (Keputusan: ${riskLevel}, Markah: ${totalScreenerPoints}/10). Saya ingin membuat temjanji ujian pendengaran di Innohear Kajang.`
+        : `Hello RPWP Healthcare. I completed the Interactive Hearing Self-Assessment Screener on your website (Result: ${riskLevel}, Score: ${totalScreenerPoints}/10). I would like to book a clinical hearing diagnostic test at Innohear Kajang.`
     );
     rBtn.href = `https://wa.me/60196808697/?text=${waText}`;
-    rBtn.textContent = lang === "bm" ? "Tempah Ujian Pendengaran di INNOHEAR Kajang ↗" : "Book Hearing Test at INNOHEAR Kajang ↗";
+    rBtn.textContent = lang === "bm" ? "Tempah Ujian Pendengaran di Innohear Kajang ↗" : "Book Hearing Test at Innohear Kajang ↗";
   }
 }
 

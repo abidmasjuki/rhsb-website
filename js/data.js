@@ -1,6 +1,6 @@
 /**
  * RPWP Healthcare Master Data Store (v1.0.0)
- * Official content repository for RPWP Healthcare, INNOHEAR Kajang, and Medical Advisory Board.
+ * Official content repository for RPWP Healthcare, Innohear Kajang, and Medical Advisory Board.
  */
 
 const RPWP_DATA = {

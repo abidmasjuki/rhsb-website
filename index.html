@@ -194,6 +194,65 @@
     </div>
   </section>
 
+  <!-- 6.5. INTERACTIVE HEARING SELF-ASSESSMENT SCREENER (CLINICAL QUIZ WIDGET) -->
+  <section id="hearing-screener" class="section-padding" style="background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 100%); color: #FFFFFF; border-top: 1px solid rgba(255,255,255,0.1);">
+    <div class="container">
+      <div style="text-align: center; max-width: 750px; margin: 0 auto 35px auto;">
+        <span class="badge badge-accent" style="margin-bottom: 12px; display: inline-block; background: rgba(59,130,246,0.2); color: #60A5FA; border: 1px solid rgba(96,165,250,0.3);">Quick Clinical Self-Check</span>
+        <h2 style="font-size: 2.2rem; color: #FFFFFF; font-weight: 800; margin-bottom: 12px;">
+          Ujian Saringan Pendengaran Interaktif
+        </h2>
+        <p style="color: #CBD5E1; font-size: 1.05rem; line-height: 1.6;">
+          Jawab 5 soalan klinikal mudah ini untuk menilai kesihatan pendengaran anda atau ahli keluarga dan dapatkan cadangan diagnostik secara serta-merta.
+        </p>
+      </div>
+
+      <!-- Screener Card Widget -->
+      <div style="max-width: 680px; margin: 0 auto; background: rgba(255,255,255,0.06); backdrop-filter: blur(12px); border-radius: 20px; border: 1px solid rgba(255,255,255,0.15); padding: 35px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
+        
+        <!-- Progress Bar -->
+        <div id="screenerProgressBox" style="margin-bottom: 25px;">
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: #94A3B8; margin-bottom: 8px; font-weight: 600;">
+            <span id="screenerStepText">Soalan 1 daripada 5</span>
+            <span id="screenerProgressPercent">20%</span>
+          </div>
+          <div style="width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
+            <div id="screenerProgressBar" style="width: 20%; height: 100%; background: linear-gradient(90deg, #3B82F6, #10B981); transition: width 0.3s ease;"></div>
+          </div>
+        </div>
+
+        <!-- Dynamic Question Box -->
+        <div id="screenerQuestionBox">
+          <h3 id="screenerQuestionTitle" style="font-size: 1.25rem; font-weight: 700; color: #FFFFFF; margin-bottom: 22px; line-height: 1.5;">
+            1. Adakah anda kerap menghadapi kesukaran memahami perbualan di tempat berbunyi bising (restoran, kenduri, atau majlis keluarga)?
+          </h3>
+          <div style="display: flex; flex-direction: column; gap: 12px;" id="screenerOptionsContainer">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Result Card Box (Hidden Initially) -->
+        <div id="screenerResultBox" style="display: none; text-align: center; padding: 10px 0;">
+          <div id="screenerResultBadge" style="display: inline-block; padding: 6px 18px; border-radius: 30px; font-weight: 800; font-size: 0.95rem; text-transform: uppercase; margin-bottom: 16px;">
+            Keputusan Saringan
+          </div>
+          <h3 id="screenerResultTitle" style="font-size: 1.5rem; font-weight: 800; color: #FFFFFF; margin-bottom: 12px;"></h3>
+          <p id="screenerResultDesc" style="color: #CBD5E1; font-size: 1rem; line-height: 1.7; margin-bottom: 25px;"></p>
+          
+          <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+            <a id="screenerResultWhatsappBtn" href="#" target="_blank" class="btn btn-green" style="font-weight: 700; padding: 12px 24px;">
+              Tempah Ujian Pendengaran di INNOHEAR Kajang ↗
+            </a>
+            <button onclick="resetScreener()" class="btn btn-outline" style="color: #FFFFFF; border-color: rgba(255,255,255,0.3); padding: 12px 20px;">
+              Ulang Ujian
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- 7. INNOHEAR KAJANG BRANCH & AUTHENTIC GOOGLE REVIEWS (LOCATION & SOCIAL PROOF TRUST) -->
   <section id="innohear" class="section-padding" style="background: var(--bg-subtle);">
     <div class="container">

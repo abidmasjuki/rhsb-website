@@ -708,3 +708,26 @@ img {
 @media (max-width: 480px) {
   .footer-grid { grid-template-columns: 1fr; }
 }
+
+/* Interactive Hearing Screener Option Buttons */
+.screener-opt-btn {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.25 ease;
+  display: block;
+  width: 100%;
+}
+
+.screener-opt-btn:hover {
+  background: rgba(59, 130, 246, 0.3);
+  border-color: #3B82F6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.25);
+}

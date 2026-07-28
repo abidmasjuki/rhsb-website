@@ -30,7 +30,7 @@
       // Pillars
       "pillar_hearing_title": "1. Clinical Hearing Services & Hearing Aids",
       "pillar_hearing_desc": "Certified audiology testing, Pure Tone Audiometry (PTA), ear canal otoscopy, and hearing aid fitting from global leading brands (Phonak, Oticon, ReSound, Interton) at INNOHEAR Kajang.",
-      "pillar_mobile_title": "2. Pusat Audiometrik Bergerak YAPEL",
+      "pillar_mobile_title": "2. YAPEL Mobile Industrial Audiometric Unit",
       "pillar_mobile_desc": "DOSH Approved Centre (Ref: JKKP/2024/11-03/00014) delivering on-site factory hearing conservation, OHD medical examination, and statutory JKKP 7 reporting with zero factory downtime.",
       "pillar_eecp_title": "3. EECP Therapy & Cardiovascular Care",
       "pillar_eecp_desc": "Non-invasive counterpulsation therapy enhancing coronary perfusion pressure, Shear Stress (WSS), Nitric Oxide release, and angiogenesis for heart health.",
@@ -178,6 +178,11 @@
 
     // Set html lang attribute
     document.documentElement.lang = lang;
+
+    // Re-render screener if function exists
+    if (typeof renderScreenerQuestion === "function") {
+      renderScreenerQuestion();
+    }
   }
 
   // Toggle function

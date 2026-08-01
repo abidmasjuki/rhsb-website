@@ -1,15 +1,18 @@
 /**
  * RPWP Healthcare Unified Booking Engine
- * Version: 1.0.0
+ * Version: 1.1.0
  */
 
 class BookingModal {
   constructor() {
-    this.selectedType = "eecp";
+    this.selectedType = (window.RPWP_FEATURES && !window.RPWP_FEATURES.isEnabled('eecp')) ? "hearing" : "eecp";
     this.defaultService = "";
   }
 
   open(type = "eecp", defaultService = "") {
+    if (type === "eecp" && window.RPWP_FEATURES && !window.RPWP_FEATURES.isEnabled("eecp")) {
+      type = "hearing";
+    }
     this.selectedType = type;
     this.defaultService = defaultService;
     const modal = document.getElementById("booking-modal");
@@ -35,7 +38,7 @@ class BookingModal {
         <p class="booking-desc">Book your non-invasive assessment at RPWP Healthcare Center Kajang.</p>
 
         <div class="booking-type-toggle">
-          <button class="type-toggle-btn ${this.selectedType === 'eecp' ? 'active' : ''}" onclick="window.bookingModal.setType('eecp')">
+          <button data-feature="eecp" class="type-toggle-btn ${this.selectedType === 'eecp' ? 'active' : ''}" onclick="window.bookingModal.setType('eecp')">
             🫀 OMAY EECP Therapy Screening
           </button>
           <button class="type-toggle-btn ${this.selectedType === 'hearing' ? 'active' : ''}" onclick="window.bookingModal.setType('hearing')">

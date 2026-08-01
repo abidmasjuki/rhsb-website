@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Build Version v1.0.0 Dedicated PPE Products & The Genesis Story of RPWP Healthcare -->
+<!-- Build Version v1.1.0 Dedicated PPE Products & The Genesis Story of RPWP Healthcare with Dynamic Feature Toggles -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +11,7 @@
   <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png?v=1.0.4">
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png?v=1.0.4">
   <link rel="stylesheet" href="css/styles.css?v=1.0.0">
+  <script src="js/feature-toggle.js?v=1.1.0"></script>
 </head>
 <body>
 
@@ -46,10 +47,10 @@
         <li class="nav-link"><a href="index.html" data-i18n="nav_home">Home</a></li>
         <li class="nav-link"><a href="index.html#innohear" data-i18n="footer_link_audiology">Audiology Center</a></li>
         <li class="nav-link"><a href="audiometric-mobile.html" data-i18n="nav_mobile_audio">Mobile Audiometry</a></li>
-        <li class="nav-link"><a href="eecp.html" data-i18n="nav_eecp">EECP Therapy</a></li>
-        <li class="nav-link active"><a href="ppe.html" data-i18n="nav_ppe">PPE Story & Products</a></li>
+        <li class="nav-link" data-feature="eecp"><a href="eecp.html" data-i18n="nav_eecp">EECP Therapy</a></li>
+        <li class="nav-link active" data-feature="ppe"><a href="ppe.html" data-i18n="nav_ppe">PPE Story & Products</a></li>
         <li class="nav-link"><a href="index.html#hearing-brands" data-i18n="nav_hearing">Hearing Aids</a></li>
-        <li class="nav-link"><a href="#catalog" data-i18n="nav_supplies">Medical Supplies</a></li>
+        <li class="nav-link" data-feature="ppe"><a href="#catalog" data-i18n="nav_supplies">Medical Supplies</a></li>
         <li class="nav-link"><a href="index.html#advisory" data-i18n="nav_advisory">Advisory Panel</a></li>
       </ul>
     </div>
@@ -313,10 +314,10 @@
         <div>
           <h4 data-i18n="footer_services_title">Core Services</h4>
           <ul class="footer-nav">
-            <li><a href="ppe.html" data-i18n="footer_link_ppe">PPE & Genesis Story</a></li>
-            <li><a href="eecp.html" data-i18n="footer_link_eecp">EECP Therapy</a></li>
+            <li data-feature="ppe"><a href="ppe.html" data-i18n="footer_link_ppe">PPE & Genesis Story</a></li>
+            <li data-feature="eecp"><a href="eecp.html" data-i18n="footer_link_eecp">EECP Therapy</a></li>
             <li><a href="index.html#hearing-brands" data-i18n="footer_link_hearing">Hearing Aids</a></li>
-            <li><a href="#catalog" data-i18n="footer_link_drmas">DrMas Sanitiser & PPE</a></li>
+            <li data-feature="ppe"><a href="#catalog" data-i18n="footer_link_drmas">DrMas Sanitiser & PPE</a></li>
           </ul>
         </div>
 

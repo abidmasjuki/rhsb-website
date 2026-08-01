@@ -5,6 +5,13 @@ All notable changes to the RPWP Healthcare web platform will be documented in th
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.1.0] - 2026-08-01
+
+### Added
+- **Dynamic Feature Toggle System**: Client-side visibility engine (`js/feature-toggle.js`) that reads settings from `config.json` to dynamically hide navigation links, homepage sections, shortcuts, footer links, and handle direct page redirection.
+- **Interactive Toggles Dashboard**: Dedicated `settings.html` panel for non-technical administrators to test toggles locally in preview mode and copy production JSON configurations.
+- **Dynamic Booking Validation**: Updated booking controller to adjust default appointment paths based on dynamic feature states.
+
 ## [v1.0.0] - 2026-07-27
 
 ### Added

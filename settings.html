@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Settings & Module Toggle Console | RPWP Healthcare</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --primary-blue: #2563EB;
+      --primary-blue-dark: #1E4E8C;
+      --bg-primary: #F8FAFC;
+      --bg-surface: #FFFFFF;
+      --bg-subtle: #F1F5F9;
+      --text-dark: #0F172A;
+      --text-medium: #334155;
+      --text-light: #64748B;
+      --text-white: #FFFFFF;
+      --accent-green: #16A34A;
+      --accent-red: #7A0000;
+      
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      
+      --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-primary);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .logo-title {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary-blue-dark);
+      letter-spacing: -0.5px;
+    }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: var(--text-light);
+      font-size: 1.1rem;
+    }
+
+    .card {
+      background: var(--bg-surface);
+      border-radius: 16px;
+      padding: 35px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid #E2E8F0;
+      margin-bottom: 30px;
+    }
+
+    .mode-indicator {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      border-radius: 30px;
+      background: var(--bg-subtle);
+      margin-bottom: 30px;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .mode-badge {
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .mode-badge.live {
+      background-color: #DEF7EC;
+      color: #03543F;
+      border: 1px solid #BCF0DA;
+    }
+
+    .mode-badge.preview {
+      background-color: #FEF3C7;
+      color: #92400E;
+      border: 1px solid #FDE68A;
+    }
+
+    .toggle-section {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      margin-bottom: 35px;
+    }
+
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      background: var(--bg-primary);
+      border-radius: 12px;
+      border: 1px solid #E2E8F0;
+      transition: all 0.2s ease;
+    }
+
+    .toggle-row:hover {
+      border-color: var(--primary-blue);
+      box-shadow: var(--shadow-md);
+    }
+
+    .toggle-info {
+      flex: 1;
+      padding-right: 20px;
+    }
+
+    .toggle-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toggle-desc {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    /* Switch styling */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+      flex-shrink: 0;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #CBD5E1;
+      transition: .4s;
+      border-radius: 34px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    input:checked + .slider {
+      background-color: var(--primary-blue);
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px var(--primary-blue);
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    /* Actions */
+    .actions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 600px) {
+      .actions-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+      font-family: var(--font-body);
+    }
+
+    .btn-primary {
+      background: var(--primary-blue);
+      color: var(--text-white);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-blue-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: var(--bg-subtle);
+      color: var(--text-medium);
+      border: 1px solid #E2E8F0;
+    }
+
+    .btn-secondary:hover {
+      background: #E2E8F0;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-medium);
+      border: 1px solid #CBD5E1;
+    }
+
+    .btn-outline:hover {
+      background: var(--bg-subtle);
+      border-color: var(--text-light);
+    }
+
+    .btn-danger {
+      background: #FEE2E2;
+      color: #991B1B;
+      border: 1px solid #FCA5A5;
+    }
+
+    .btn-danger:hover {
+      background: #FCA5A5;
+      transform: translateY(-1px);
+    }
+
+    .alert {
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+      display: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .alert.success {
+      background-color: #DEF7EC;
+      color: #03543F;
+      border: 1px solid #BCF0DA;
+    }
+
+    .alert.info {
+      background-color: #EBF5FF;
+      color: #1E429F;
+      border: 1px solid #C3DDFD;
+    }
+
+    .json-preview {
+      background: #0F172A;
+      color: #38BDF8;
+      border-radius: 10px;
+      padding: 20px;
+      font-family: monospace;
+      font-size: 0.9rem;
+      overflow-x: auto;
+      margin-top: 15px;
+      border: 1px solid #1E293B;
+      white-space: pre-wrap;
+    }
+
+    .copy-section {
+      margin-top: 30px;
+      border-top: 1px solid #E2E8F0;
+      padding-top: 25px;
+    }
+
+    .instructions {
+      margin-top: 30px;
+      font-size: 0.88rem;
+      color: var(--text-light);
+    }
+
+    .instructions ol {
+      margin-left: 20px;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-container">
+        <span class="logo-title">RPWP Healthcare</span>
+      </div>
+      <h1>System Settings Dashboard</h1>
+      <p class="subtitle">Bilingual Website Feature & Topic Toggle Console</p>
+    </header>
+
+    <div class="card">
+      <div class="mode-indicator">
+        <span>Current Configuration Mode:</span>
+        <span id="mode-badge" class="mode-badge live">Live Mode</span>
+      </div>
+
+      <div id="alert-box" class="alert success"></div>
+
+      <div class="toggle-section">
+        <!-- EECP Toggle -->
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <div class="toggle-title">🫀 Cardiovascular Care (EECP)</div>
+            <div class="toggle-desc">Toggle the Enhanced External Counterpulsation section, home shortcuts, navigation options, and enable automatic redirect.</div>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="toggle-eecp" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <!-- PPE Toggle -->
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <div class="toggle-title">📦 DrMas Medical Supplies & PPE</div>
+            <div class="toggle-desc">Toggle the COVID-19 Genesis Story, non-woven protective gowns/kits, links, and order forms.</div>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="toggle-ppe" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="actions-grid">
+        <button class="btn btn-primary" onclick="applyPreview()">Set Local Preview Mode</button>
+        <button class="btn btn-danger" onclick="clearPreview()">Reset to Live Mode</button>
+      </div>
+
+      <div style="text-align: center;">
+        <a href="index.html" class="btn btn-outline" style="width: 100%;">← Return to Website Homepage</a>
+      </div>
+
+      <div class="copy-section">
+        <h3>Publish Production Config</h3>
+        <p class="toggle-desc" style="margin-bottom: 10px;">To push changes to all live users without redeploying code, copy the JSON below and save it inside your web server's <code>config.json</code> file:</p>
+        <div class="json-preview" id="json-code"></div>
+        <button class="btn btn-secondary" style="margin-top: 10px; width: 100%;" onclick="copyJsonText()">Copy JSON Configuration</button>
+      </div>
+
+      <div class="instructions">
+        <h3>How to apply updates:</h3>
+        <ol>
+          <li>Click <strong>"Set Local Preview Mode"</strong> to verify layout hides correctly on this device.</li>
+          <li>Click <strong>"Copy JSON Configuration"</strong> to copy the production config code.</li>
+          <li>Log into your Hosting Console (e.g., Firebase Host, Netlify, Render, cPanel).</li>
+          <li>Edit or replace the contents of <code>config.json</code> in the website root directory with the copied text and save.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const eecpToggle = document.getElementById('toggle-eecp');
+    const ppeToggle = document.getElementById('toggle-ppe');
+    const jsonPreview = document.getElementById('json-code');
+    const modeBadge = document.getElementById('mode-badge');
+    const alertBox = document.getElementById('alert-box');
+
+    // 1. Generate real-time JSON display
+    function updateJsonDisplay() {
+      const config = {
+        version: "1.1.0",
+        features: {
+          eecp: eecpToggle.checked,
+          ppe: ppeToggle.checked
+        }
+      };
+      jsonPreview.textContent = JSON.stringify(config, null, 2);
+    }
+
+    eecpToggle.addEventListener('change', updateJsonDisplay);
+    ppeToggle.addEventListener('change', updateJsonDisplay);
+
+    // 2. Load settings on page load
+    function loadCurrentState() {
+      const localOverrides = localStorage.getItem('rpwp_feature_overrides');
+      
+      if (localOverrides) {
+        // Preview Mode
+        try {
+          const parsed = JSON.parse(localOverrides);
+          eecpToggle.checked = parsed.eecp !== false;
+          ppeToggle.checked = parsed.ppe !== false;
+          
+          modeBadge.textContent = 'Preview Override Active';
+          modeBadge.className = 'mode-badge preview';
+          showAlert('info', 'Viewing in Local Preview Mode. Changes are only active on this browser.');
+        } catch(e) {
+          clearPreview();
+        }
+      } else {
+        // Live Mode (Load from config.json)
+        modeBadge.textContent = 'Live Mode';
+        modeBadge.className = 'mode-badge live';
+        
+        fetch('config.json?t=' + Date.now())
+          .then(res => res.json())
+          .then(config => {
+            if (config.features) {
+              eecpToggle.checked = config.features.eecp !== false;
+              ppeToggle.checked = config.features.ppe !== false;
+              updateJsonDisplay();
+            }
+          })
+          .catch(() => {
+            // Fallback to default
+            eecpToggle.checked = true;
+            ppeToggle.checked = true;
+            updateJsonDisplay();
+          });
+      }
+      updateJsonDisplay();
+    }
+
+    // 3. Apply Preview to localStorage
+    function applyPreview() {
+      const previewState = {
+        eecp: eecpToggle.checked,
+        ppe: ppeToggle.checked
+      };
+      localStorage.setItem('rpwp_feature_overrides', JSON.stringify(previewState));
+      
+      // If feature engine is loaded, trigger update
+      if (window.parent && window.parent.RPWP_FEATURES) {
+        window.parent.RPWP_FEATURES.updatePreview(previewState);
+      }
+      
+      loadCurrentState();
+      showAlert('success', 'Preview mode updated! Go to the home page to inspect the layout.');
+    }
+
+    // 4. Clear Preview
+    function clearPreview() {
+      localStorage.removeItem('rpwp_feature_overrides');
+      loadCurrentState();
+      showAlert('success', 'Preview override cleared. Reverted to site-wide config.json settings.');
+    }
+
+    // 5. Show Custom Alerts
+    function showAlert(type, message) {
+      alertBox.textContent = message;
+      alertBox.style.display = 'block';
+      alertBox.className = 'alert ' + type;
+      setTimeout(() => {
+        alertBox.style.display = 'none';
+      }, 5000);
+    }
+
+    // 6. Copy Code Button
+    function copyJsonText() {
+      const textToCopy = jsonPreview.textContent;
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        showAlert('success', 'Copied config JSON text to clipboard!');
+      }).catch(err => {
+        showAlert('info', 'Failed to copy auto. Please select and copy text manually.');
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', loadCurrentState);
+  </script>
+</body>
+</html>

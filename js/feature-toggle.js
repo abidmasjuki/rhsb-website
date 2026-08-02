@@ -46,6 +46,88 @@
     if (currentPath.includes('eecp.html') && features.eecp === false) {
       window.location.replace('index.html');
     }
+
+    // 3.5 Clean up textual references
+    cleanDOMText(features);
+  }
+
+  // 3.8 Dynamic Text Cleaning for Audit Compliance
+  function cleanDOMText(features) {
+    // 1. Clean Title
+    if (features.eecp === false) {
+      document.title = document.title
+        .replace(', Medical Supplies & EECP Therapy', '')
+        .replace(' & EECP Therapy', '')
+        .replace('EECP Therapy & ', '')
+        .replace('Enhanced External Counterpulsation (EECP) Therapy | ', '');
+    }
+    if (features.ppe === false) {
+      document.title = document.title
+        .replace('Medical Supplies & ', '')
+        .replace(' & Medical Supplies', '')
+        .replace(', Medical Supplies &', ' &')
+        .replace('PPE Products & ', '');
+    }
+
+    // 2. Clean Meta Description
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      let desc = metaDesc.getAttribute('content') || '';
+      if (features.eecp === false) {
+        desc = desc
+          .replace(', and Enhanced External Counterpulsation (EECP) Therapy', '')
+          .replace('Enhanced External Counterpulsation (EECP) Therapy at RPWP Healthcare Kajang. ', '')
+          .replace(' and Enhanced External Counterpulsation (EECP) Therapy.', '.');
+      }
+      if (features.ppe === false) {
+        desc = desc
+          .replace(', DrMas medical supplies', '')
+          .replace(', and DrMas medical supplies', '')
+          .replace('and DrMas medical supplies. ', '');
+      }
+      metaDesc.setAttribute('content', desc);
+    }
+
+    // 3. Clean Hero text paragraphs
+    const heroText = document.querySelector('.hero-text');
+    if (heroText) {
+      let txt = heroText.textContent || '';
+      if (features.eecp === false) {
+        txt = txt
+          .replace('clinically proven Enhanced External Counterpulsation (EECP) cardiac therapy, ', '')
+          .replace('terapi jantung Enhanced External Counterpulsation (EECP) terbukti secara klinikal, ', '')
+          .replace('Enhanced External Counterpulsation (EECP) cardiac therapy, ', '');
+      }
+      if (features.ppe === false) {
+        txt = txt
+          .replace(', and DrMas medical supplies', '')
+          .replace(', dan bekalan perubatan DrMas', '')
+          .replace('and DrMas medical supplies. ', '');
+      }
+      // Fix grammar after replacement (e.g. double spaces, trailing commas)
+      txt = txt.replace(/\s+/g, ' ').replace(/,\s*,/g, ',').trim();
+      heroText.textContent = txt;
+    }
+
+    // 4. Clean Search Input Placeholder
+    const searchInputs = document.querySelectorAll('.search-input');
+    searchInputs.forEach(input => {
+      let p = input.getAttribute('placeholder') || '';
+      if (features.eecp === false) {
+        p = p
+          .replace(', EECP therapy', '')
+          .replace(', terapi EECP', '')
+          .replace('EECP protocol, ', '');
+      }
+      if (features.ppe === false) {
+        p = p
+          .replace(', DrMas sanitisers', '')
+          .replace(', pembersih DrMas', '')
+          .replace('DrMas sanitisers, ', '');
+      }
+      input.setAttribute('placeholder', p);
+      if (input.placeholder) input.placeholder = p;
+    });
   }
 
   // 4. Expose dynamic triggers globally so wizards can query feature states
@@ -144,5 +226,21 @@
         window.location.href = 'settings.html';
       });
     }
+
+    // Intercept language toggle to clean up text after translations run
+    if (window.toggleLanguage) {
+      const origToggle = window.toggleLanguage;
+      window.toggleLanguage = function() {
+        origToggle();
+        setTimeout(() => {
+          cleanDOMText(activeFeatures);
+        }, 10);
+      };
+    }
+    
+    // Run cleanup delayed to ensure i18n has processed its initial DOM rendering
+    setTimeout(() => {
+      cleanDOMText(activeFeatures);
+    }, 10);
   });
 })();

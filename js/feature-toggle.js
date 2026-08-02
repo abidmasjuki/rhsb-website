@@ -125,9 +125,24 @@
       });
   }
 
+  // 7. Silent Admin console entry (Alt+S keyboard shortcut or double click on footer version text)
+  document.addEventListener('keydown', (e) => {
+    if (e.altKey && e.key.toLowerCase() === 's') {
+      window.location.href = 'settings.html';
+    }
+  });
+
   // Run immediately and on DOM load to guarantee execution
   initializeEngine();
   document.addEventListener('DOMContentLoaded', () => {
     applyToggles(activeFeatures);
+    
+    // Bind double click listener to footer copyright
+    const footerText = document.querySelector('.footer-bottom p');
+    if (footerText) {
+      footerText.addEventListener('dblclick', () => {
+        window.location.href = 'settings.html';
+      });
+    }
   });
 })();

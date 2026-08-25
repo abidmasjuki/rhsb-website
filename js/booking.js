@@ -1,19 +1,16 @@
 /**
  * RPWP Healthcare Unified Booking Engine
- * Version: 1.1.0
+ * Version: 1.2.0
  */
 
 class BookingModal {
   constructor() {
-    this.selectedType = (window.RPWP_FEATURES && !window.RPWP_FEATURES.isEnabled('eecp')) ? "hearing" : "eecp";
+    this.selectedType = "hearing";
     this.defaultService = "";
   }
 
-  open(type = "eecp", defaultService = "") {
-    if (type === "eecp" && window.RPWP_FEATURES && !window.RPWP_FEATURES.isEnabled("eecp")) {
-      type = "hearing";
-    }
-    this.selectedType = type;
+  open(type = "hearing", defaultService = "") {
+    this.selectedType = "hearing";
     this.defaultService = defaultService;
     const modal = document.getElementById("booking-modal");
     if (!modal) return;
@@ -37,31 +34,16 @@ class BookingModal {
         <h3 class="booking-title">Schedule Clinical Consultation & Screening</h3>
         <p class="booking-desc">Book your non-invasive assessment at RPWP Healthcare Center Kajang.</p>
 
-        <div class="booking-type-toggle">
-          <button data-feature="eecp" class="type-toggle-btn ${this.selectedType === 'eecp' ? 'active' : ''}" onclick="window.bookingModal.setType('eecp')">
-            🫀 OMAY EECP Therapy Screening
-          </button>
-          <button class="type-toggle-btn ${this.selectedType === 'hearing' ? 'active' : ''}" onclick="window.bookingModal.setType('hearing')">
-            👂 Clinical Hearing Assessment
-          </button>
-        </div>
-
         <form id="booking-form" onsubmit="window.bookingModal.submitBooking(event)">
           <div class="form-grid">
             <div class="form-group">
               <label>Select Clinical Service *</label>
               <select class="form-control" required id="book-service">
-                ${this.selectedType === 'eecp' ? `
-                  <option value="OMAY EECP Initial Trial Session" ${this.defaultService.includes('Trial') ? 'selected' : ''}>OMAY EECP Initial Trial Session (45 Mins)</option>
-                  <option value="35-Session Complete Regimen Consultation" ${this.defaultService.includes('Regimen') ? 'selected' : ''}>35-Session Complete Cardiac Regimen Consultation</option>
-                  <option value="Pre-EECP Cardiologist Evaluation" ${this.defaultService.includes('Physician') ? 'selected' : ''}>Pre-EECP Cardiologist Baseline Evaluation</option>
-                ` : `
-                  <option value="Adult Pure Tone Audiometry (PTA)" ${this.defaultService.includes('Diagnostic') || this.defaultService.includes('Adult') ? 'selected' : ''}>Adult Diagnostic Audiometry (PTA)</option>
-                  <option value="Pediatric OAE / VRA Screening" ${this.defaultService.includes('Child') ? 'selected' : ''}>Pediatric OAE / Visual Reinforcement Screening</option>
-                  <option value="Digital Hearing Aid Trial & Fitting">Digital Hearing Aid Prescription & Tuning</option>
-                  <option value="Custom Ear Mold Impression">Custom Ear Mold Impression (Water/Noise)</option>
-                  <option value="Tinnitus & Hearing Rehabilitation">Tinnitus Counseling & Rehabilitation</option>
-                `}
+                <option value="Adult Pure Tone Audiometry (PTA)" ${this.defaultService.includes('Diagnostic') || this.defaultService.includes('Adult') ? 'selected' : ''}>Adult Diagnostic Audiometry (PTA)</option>
+                <option value="Pediatric OAE / VRA Screening" ${this.defaultService.includes('Child') ? 'selected' : ''}>Pediatric OAE / Visual Reinforcement Screening</option>
+                <option value="Digital Hearing Aid Trial & Fitting">Digital Hearing Aid Prescription & Tuning</option>
+                <option value="Custom Ear Mold Impression">Custom Ear Mold Impression (Water/Noise)</option>
+                <option value="Tinnitus & Hearing Rehabilitation">Tinnitus Counseling & Rehabilitation</option>
               </select>
             </div>
 
@@ -103,7 +85,7 @@ class BookingModal {
 
             <div class="form-group full-width">
               <label>Medical History / Special Requests</label>
-              <textarea class="form-control" rows="2" placeholder="Mention any existing cardiac conditions, hearing challenges, or notes for the specialist" id="book-notes"></textarea>
+              <textarea class="form-control" rows="2" placeholder="Mention any existing hearing challenges or notes for the specialist" id="book-notes"></textarea>
             </div>
           </div>
 
@@ -111,11 +93,6 @@ class BookingModal {
         </form>
       </div>
     `;
-  }
-
-  setType(type) {
-    this.selectedType = type;
-    this.render();
   }
 
   submitBooking(e) {

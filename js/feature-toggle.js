@@ -1,12 +1,11 @@
 /**
  * RPWP Healthcare - Dynamic Feature Toggle Engine
- * Version: 1.1.0
- * Manages runtime visibility of major modules (e.g., EECP, PPE) based on config.json
+ * Version: 1.2.0
+ * Manages runtime visibility of major modules (e.g., PPE) based on config.json
  */
 
 (function() {
   const defaultFeatures = {
-    eecp: true,
     ppe: true
   };
 
@@ -43,9 +42,6 @@
     if (currentPath.includes('ppe.html') && features.ppe === false) {
       window.location.replace('index.html');
     }
-    if (currentPath.includes('eecp.html') && features.eecp === false) {
-      window.location.replace('index.html');
-    }
 
     // 3.5 Clean up textual references
     cleanDOMText(features);
@@ -54,13 +50,6 @@
   // 3.8 Dynamic Text Cleaning for Audit Compliance
   function cleanDOMText(features) {
     // 1. Clean Title
-    if (features.eecp === false) {
-      document.title = document.title
-        .replace(', Medical Supplies & EECP Therapy', '')
-        .replace(' & EECP Therapy', '')
-        .replace('EECP Therapy & ', '')
-        .replace('Enhanced External Counterpulsation (EECP) Therapy | ', '');
-    }
     if (features.ppe === false) {
       document.title = document.title
         .replace('Medical Supplies & ', '')
@@ -73,12 +62,6 @@
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       let desc = metaDesc.getAttribute('content') || '';
-      if (features.eecp === false) {
-        desc = desc
-          .replace(', and Enhanced External Counterpulsation (EECP) Therapy', '')
-          .replace('Enhanced External Counterpulsation (EECP) Therapy at RPWP Healthcare Kajang. ', '')
-          .replace(' and Enhanced External Counterpulsation (EECP) Therapy.', '.');
-      }
       if (features.ppe === false) {
         desc = desc
           .replace(', DrMas medical supplies', '')
@@ -92,12 +75,6 @@
     const heroText = document.querySelector('.hero-text');
     if (heroText) {
       let txt = heroText.textContent || '';
-      if (features.eecp === false) {
-        txt = txt
-          .replace('clinically proven Enhanced External Counterpulsation (EECP) cardiac therapy, ', '')
-          .replace('terapi jantung Enhanced External Counterpulsation (EECP) terbukti secara klinikal, ', '')
-          .replace('Enhanced External Counterpulsation (EECP) cardiac therapy, ', '');
-      }
       if (features.ppe === false) {
         txt = txt
           .replace(', and DrMas medical supplies', '')
@@ -113,12 +90,6 @@
     const searchInputs = document.querySelectorAll('.search-input');
     searchInputs.forEach(input => {
       let p = input.getAttribute('placeholder') || '';
-      if (features.eecp === false) {
-        p = p
-          .replace(', EECP therapy', '')
-          .replace(', terapi EECP', '')
-          .replace('EECP protocol, ', '');
-      }
       if (features.ppe === false) {
         p = p
           .replace(', DrMas sanitisers', '')

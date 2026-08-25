@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Build Version v1.1.0 Restructured 3-Pillar Information Architecture with Dynamic Feature Toggles -->
+<!-- Build Version v1.2.0 Restructured 2-Pillar Information Architecture with Dynamic Feature Toggles -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RPWP Healthcare | Clinical Audiology, Medical Supplies & EECP Therapy</title>
-  <meta name="description" content="RPWP Healthcare Sdn Bhd - Official provider of Clinical Hearing Services, DrMas Medical Supplies, and Enhanced External Counterpulsation (EECP) Therapy. Sustaining the RPWP community.">
+  <title>RPWP Healthcare | Clinical Audiology & Medical Supplies</title>
+  <meta name="description" content="RPWP Healthcare Sdn Bhd - Official provider of Clinical Hearing Services, and DrMas Medical Supplies. Sustaining the RPWP community.">
   <link rel="icon" type="image/x-icon" href="favicon.ico?v=1.0.4">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png?v=1.0.4">
   <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png?v=1.0.4">
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png?v=1.0.4">
   <link rel="stylesheet" href="css/styles.css?v=1.0.0">
-  <script src="js/feature-toggle.js?v=1.1.0"></script>
+  <script src="js/feature-toggle.js?v=1.2.0"></script>
 </head>
 <body>
 
@@ -24,7 +24,7 @@
 
       <div class="search-container">
         <span class="search-icon">🔍</span>
-        <input type="text" class="search-input" placeholder="Search hearing aids, DrMas sanitisers, EECP therapy..." data-i18n="search_placeholder">
+        <input type="text" class="search-input" placeholder="Search hearing aids, DrMas sanitisers..." data-i18n="search_placeholder">
       </div>
 
       <div style="display: flex; align-items: center; gap: 15px;">
@@ -40,14 +40,13 @@
     </div>
   </header>
 
-  <!-- 2. Navigation Bar (HOME, MOBILE AUDIOMETRY, PPE STORY, HEARING AIDS, EECP THERAPY, MEDICAL SUPPLIES) -->
+  <!-- 2. Navigation Bar (HOME, MOBILE AUDIOMETRY, PPE STORY, HEARING AIDS, MEDICAL SUPPLIES) -->
   <nav class="site-nav">
     <div class="container">
       <ul class="nav-list">
         <li class="nav-link active"><a href="index.html" data-i18n="nav_home">Home</a></li>
         <li class="nav-link"><a href="#innohear" data-i18n="footer_link_audiology">Audiology Center</a></li>
         <li class="nav-link"><a href="audiometric-mobile.html" data-i18n="nav_mobile_audio">Mobile Audiometry</a></li>
-        <li class="nav-link" data-feature="eecp"><a href="eecp.html" data-i18n="nav_eecp">EECP Therapy</a></li>
         <li class="nav-link" data-feature="ppe"><a href="ppe.html" data-i18n="nav_ppe">PPE Story & Products</a></li>
         <li class="nav-link"><a href="#hearing-brands" data-i18n="nav_hearing">Hearing Aids</a></li>
         <li class="nav-link" data-feature="ppe"><a href="#products" data-i18n="nav_supplies">Medical Supplies</a></li>
@@ -59,15 +58,14 @@
   <!-- 3. Classic Hero Banner (WITH ELEGANT CLINICAL BACKDROP IMAGE & GRADIENT OVERLAY) -->
   <section class="hero-section" style="background: linear-gradient(135deg, rgba(15,23,42,0.88), rgba(30,58,138,0.92)), url('images/mobile-audiometry-van.jpg') center/cover no-repeat;">
     <div class="container">
-      <div class="hero-tag" data-i18n="hero_tag">CLINICAL AUDIOLOGY, INDUSTRIAL HEALTH & CARDIOVASCULAR CARE</div>
+      <div class="hero-tag" data-i18n="hero_tag">CLINICAL AUDIOLOGY & INDUSTRIAL HEALTH</div>
       <h1 class="hero-title" data-i18n="hero_title">HEARING PROBLEM IS BIG ?</h1>
       <h4 class="hero-subtitle" data-i18n="hero_subtitle">WE MAY MAKE IT SMALL FOR YOU</h4>
       <p class="hero-text" data-i18n="hero_text">
-        RPWP Healthcare provides clinically proven Enhanced External Counterpulsation (EECP) cardiac therapy, diagnostic audiology, Mobile Industrial Audiometric Testing (YAPEL Ref: JKKP/2024/11-03/00014), and DrMas medical supplies. Reinvesting 100% of profits to sustain the RPWP social community.
+        RPWP Healthcare provides diagnostic audiology, Mobile Industrial Audiometric Testing (YAPEL Ref: JKKP/2024/11-03/00014), and DrMas medical supplies. Reinvesting 100% of profits to sustain the RPWP social community.
       </p>
       <div class="hero-cta">
         <a href="#hearing-brands" class="btn btn-green" data-i18n="btn_browse_hearing">Browse Hearing Aids</a>
-        <a href="eecp.html" class="btn btn-white" data-feature="eecp" data-i18n="btn_eecp_details">EECP Therapy Details</a>
         <a href="https://wa.me/60196808697/?text=Salam%20RPWP%20Healthcare.%20I%20want%20to%20check%20my%20hearing" target="_blank" class="btn btn-outline-white" data-i18n="btn_schedule_hearing">Schedule Hearing Test</a>
       </div>
     </div>
@@ -478,32 +476,6 @@
   </section>
 
   <!-- ================================================================================= -->
-  <!-- PILLAR B: CARDIOVASCULAR CARE (EECP THERAPY)                                     -->
-  <!-- ================================================================================= -->
-
-  <!-- 9. EECP Feature Teaser (STORY-BASED CARDIOVASCULAR CARE) -->
-  <section id="eecp-teaser" data-feature="eecp" class="section-padding" style="background: var(--bg-subtle);">
-    <div class="container">
-      <div style="background: #FFFFFF; border-radius: 16px; padding: 40px; box-shadow: 0 6px 25px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap;">
-        <div style="max-width: 680px;">
-          <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary-blue); text-transform: uppercase; letter-spacing: 1px;" data-i18n="eecp_story_tag">Cardiovascular Care Story</span>
-          <h2 style="font-size: 2rem; color: var(--nav-bg); margin: 8px 0 12px 0; font-weight: 800;">
-            <a href="eecp.html" class="subtle-link" data-i18n="eecp_story_title">Empowering Hearts & Restoring Active Living Without Surgery</a>
-          </h2>
-          <p style="color: var(--text-medium); font-size: 1rem; line-height: 1.6;" data-i18n="eecp_story_desc">
-            Born from a commitment to non-invasive cardiac care, EECP therapy gives individuals suffering from angina or coronary fatigue a second chance at active living—allowing mothers, fathers, and elders to walk, work, and pray alongside their families without high-risk surgical trauma.
-          </p>
-        </div>
-        <div>
-          <a href="eecp.html" class="btn btn-blue" style="font-size: 1rem; padding: 14px 28px;" data-i18n="btn_eecp_details_main">
-            EECP Clinical Details →
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================================================================= -->
   <!-- PILLAR C: MEDICAL SUPPLIES & GOVERNANCE                                          -->
   <!-- ================================================================================= -->
 
@@ -849,7 +821,6 @@
           <h4 data-i18n="footer_services_title">Core Services</h4>
           <ul class="footer-nav">
             <li data-feature="ppe"><a href="ppe.html" data-i18n="footer_link_ppe">PPE & Genesis Story</a></li>
-            <li data-feature="eecp"><a href="eecp.html" data-i18n="footer_link_eecp">EECP Therapy</a></li>
             <li><a href="#hearing-brands" data-i18n="footer_link_hearing">Hearing Aids</a></li>
             <li data-feature="ppe"><a href="#products" data-i18n="footer_link_drmas">DrMas Sanitiser & PPE</a></li>
             <li><a href="#innohear" data-i18n="footer_link_audiology">Audiology Center</a></li>

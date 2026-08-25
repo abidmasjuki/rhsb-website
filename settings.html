@@ -365,18 +365,6 @@
       <div id="alert-box" class="alert success"></div>
 
       <div class="toggle-section">
-        <!-- EECP Toggle -->
-        <div class="toggle-row">
-          <div class="toggle-info">
-            <div class="toggle-title">🫀 Cardiovascular Care (EECP)</div>
-            <div class="toggle-desc">Toggle the Enhanced External Counterpulsation section, home shortcuts, navigation options, and enable automatic redirect.</div>
-          </div>
-          <label class="switch">
-            <input type="checkbox" id="toggle-eecp" checked>
-            <span class="slider"></span>
-          </label>
-        </div>
-
         <!-- PPE Toggle -->
         <div class="toggle-row">
           <div class="toggle-info">
@@ -419,7 +407,6 @@
   </div>
 
   <script>
-    const eecpToggle = document.getElementById('toggle-eecp');
     const ppeToggle = document.getElementById('toggle-ppe');
     const jsonPreview = document.getElementById('json-code');
     const modeBadge = document.getElementById('mode-badge');
@@ -428,16 +415,14 @@
     // 1. Generate real-time JSON display
     function updateJsonDisplay() {
       const config = {
-        version: "1.1.0",
+        version: "1.2.0",
         features: {
-          eecp: eecpToggle.checked,
           ppe: ppeToggle.checked
         }
       };
       jsonPreview.textContent = JSON.stringify(config, null, 2);
     }
 
-    eecpToggle.addEventListener('change', updateJsonDisplay);
     ppeToggle.addEventListener('change', updateJsonDisplay);
 
     // 2. Load settings on page load
@@ -448,7 +433,6 @@
         // Preview Mode
         try {
           const parsed = JSON.parse(localOverrides);
-          eecpToggle.checked = parsed.eecp !== false;
           ppeToggle.checked = parsed.ppe !== false;
           
           modeBadge.textContent = 'Preview Override Active';
@@ -466,14 +450,12 @@
           .then(res => res.json())
           .then(config => {
             if (config.features) {
-              eecpToggle.checked = config.features.eecp !== false;
               ppeToggle.checked = config.features.ppe !== false;
               updateJsonDisplay();
             }
           })
           .catch(() => {
             // Fallback to default
-            eecpToggle.checked = true;
             ppeToggle.checked = true;
             updateJsonDisplay();
           });
@@ -484,7 +466,6 @@
     // 3. Apply Preview to localStorage
     function applyPreview() {
       const previewState = {
-        eecp: eecpToggle.checked,
         ppe: ppeToggle.checked
       };
       localStorage.setItem('rpwp_feature_overrides', JSON.stringify(previewState));

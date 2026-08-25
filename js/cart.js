@@ -136,7 +136,7 @@ class CartManager {
         <div class="cart-zero-state">
           <div class="zero-icon">🛒</div>
           <h4>Your Cart is Empty</h4>
-          <p>Explore our MDA-certified medical supplies, hearing aids, or OMAY EECP cardiac therapy packages.</p>
+          <p>Explore our MDA-certified medical supplies and hearing aids.</p>
           <button class="btn btn-primary" onclick="window.cartManager.closeDrawer(); window.location.hash='#catalog';">Browse Products</button>
         </div>
       `;

@@ -8,7 +8,7 @@ def verify_feature_toggles():
     print("==================================================\n")
     
     root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    html_files = ["index.html", "audiometric-mobile.html", "eecp.html", "ppe.html"]
+    html_files = ["index.html", "audiometric-mobile.html", "ppe.html"]
     
     errors = 0
     warnings = 0
@@ -23,7 +23,7 @@ def verify_feature_toggles():
         try:
             with open(config_path, 'r', encoding='utf-8') as f:
                 config_data = json.load(f)
-            if "features" in config_data and "eecp" in config_data["features"] and "ppe" in config_data["features"]:
+            if "features" in config_data and "ppe" in config_data["features"]:
                 print(f"PASS (v{config_data.get('version', 'unknown')})")
             else:
                 print("FAIL (features keys missing)")
@@ -73,12 +73,6 @@ def verify_feature_toggles():
             
         # B. Check specific homepage elements
         if filename == "index.html":
-            if 'id="eecp-teaser" data-feature="eecp"' in content or 'data-feature="eecp" id="eecp-teaser"' in content or ('id="eecp-teaser"' in content and 'data-feature="eecp"' in content):
-                print("    [OK] Homepage #eecp-teaser section tagged")
-            else:
-                print("    [ERR] Homepage #eecp-teaser section NOT tagged")
-                errors += 1
-                
             if 'id="products" data-feature="ppe"' in content or 'data-feature="ppe" id="products"' in content:
                 print("    [OK] Homepage #products section tagged")
             else:
@@ -86,15 +80,8 @@ def verify_feature_toggles():
                 errors += 1
 
         # Check navigation menu items
-        nav_eecp_matches = re.findall(r'<li[^>]*data-feature="eecp"[^>]*>.*?eecp\.html', content, re.DOTALL)
         nav_ppe_matches = re.findall(r'<li[^>]*data-feature="ppe"[^>]*>.*?ppe\.html', content, re.DOTALL)
         
-        if len(nav_eecp_matches) > 0:
-            print("    [OK] Navigation/Footer lists for EECP tagged")
-        else:
-            print("    [WARN] Navigation/Footer lists for EECP might not be fully tagged")
-            warnings += 1
-            
         if len(nav_ppe_matches) > 0:
             print("    [OK] Navigation/Footer lists for PPE tagged")
         else:

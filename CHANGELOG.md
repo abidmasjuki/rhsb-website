@@ -5,6 +5,11 @@ All notable changes to the RPWP Healthcare web platform will be documented in th
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.2.1] - 2026-11-03
+
+### Changed
+- **GDPMD Leader Certification Emblem**: Replaced the external hotlinked LeaderCB wordmark (`leadercb.com/.../Logo-LCB.jpeg`) with the official locally hosted **GDPMD Certified Leader Certification** laurel crest (`images/logo-gdpmd-leader.png`), cropped and alpha-cleaned to fit the circular medallion (`144x144px`) in `#gdpmd` and `js/data.js`.
+
 ## [v1.2.0] - 2026-08-25
 
 ### Removed

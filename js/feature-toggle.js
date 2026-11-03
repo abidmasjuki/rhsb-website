@@ -1,6 +1,6 @@
 /**
  * RPWP Healthcare - Dynamic Feature Toggle Engine
- * Version: 1.2.0
+ * Version: 1.2.1
  * Manages runtime visibility of major modules (e.g., PPE) based on config.json
  */
 

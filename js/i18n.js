@@ -1,5 +1,5 @@
 /**
- * RPWP Healthcare i18n Language Controller (v1.2.0)
+ * RPWP Healthcare i18n Language Controller (v1.2.1)
  * Complete Bilingual EN / BM Dictionary & DOM Translator
  * Default Language: EN (English)
  * Persistent Storage Key: 'rpwp_lang'
@@ -120,7 +120,7 @@
         "footer_services_title": "Core Services",
         "footer_partners_title": "Ecosystem Partners",
         "footer_company_name": "RPWP Healthcare Sdn Bhd",
-        "footer_rights_reserved": "All Rights Reserved © 2020 - 2026 RPWP Healthcare Sdn Bhd | Version v1.2.0",
+        "footer_rights_reserved": "All Rights Reserved © 2020 - 2026 RPWP Healthcare Sdn Bhd | Version v1.2.1",
         "footer_link_mobile": "Mobile Industrial Audiometry",
         "footer_link_ppe": "PPE Story & Products",
         "footer_link_hearing": "Hearing Aids",
@@ -260,7 +260,7 @@
         "footer_services_title": "Perkhidmatan Utama",
         "footer_partners_title": "Rakan Ekosistem",
         "footer_company_name": "RPWP Healthcare Sdn Bhd",
-        "footer_rights_reserved": "Hak Cipta Terpelihara © 2020 - 2026 RPWP Healthcare Sdn Bhd | Versi v1.2.0",
+        "footer_rights_reserved": "Hak Cipta Terpelihara © 2020 - 2026 RPWP Healthcare Sdn Bhd | Versi v1.2.1",
         "footer_link_mobile": "Audiometri Industri Bergerak",
         "footer_link_ppe": "Kisah PPE & Produk",
         "footer_link_hearing": "Alat Pendengaran",

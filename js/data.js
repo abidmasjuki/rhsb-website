@@ -1,10 +1,10 @@
 /**
- * RPWP Healthcare Master Data Store (v1.0.0)
+ * RPWP Healthcare Master Data Store (v1.2.1)
  * Official content repository for RPWP Healthcare, Innohear Kajang, and Medical Advisory Board.
  */
 
 const RPWP_DATA = {
-  version: "1.0.0",
+  version: "1.2.1",
   companyName: "RPWP Healthcare Sdn Bhd",
   helplinePhone: "(+60) 19-680 8697",
   helplinePhoneRaw: "60196808697",
@@ -15,7 +15,7 @@ const RPWP_DATA = {
     certifiedBy: "GDPMD Certification Body",
     certifiedUrl: "https://leadercb.com/",
     description: "Good Distribution Practice for Medical Devices (GDPMD) certified by Leader Certification Body to ensure establishment ability to maintain quality, safety and performance of medical devices.",
-    badgeUrl: "https://leadercb.com/wp-content/uploads/2023/05/Logo-LCB.jpeg"
+    badgeUrl: "images/logo-gdpmd-leader.png"
   },
 
   advisories: [
